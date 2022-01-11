@@ -79,7 +79,9 @@
 <p>It was originally developed as a one-off solution for the <a class="reference external" href="https://lethalbit.net/projects/taperipper/">taperipper</a> project, which was to boot a modern system off of a IBM 9348-002 9-track magnetic tape drive. It has since evolved into being a generic toolkit and hardware platform for SCSI.</p>
 <section id="software">
 <h2>Software<a class="headerlink" href="#software" title="Permalink to this headline"></a></h2>
-<p>Squishy is designed as both a set of utilities, and an extendable platform for dealing with SCSI. Along with the core Squishy gateware, it has things such as traffic generators and dissectors.</p>
+<p>Squishy includes an <a class="reference external" href="https://github.com/amaranth-lang/amaranth">Amaranth HDL</a> gateware library to allow one to add SCSI functionality to any project.</p>
+<p>In addition to the gateware library, it also includes a set of utilities for interacting with SCSI devices, hosts, and existing bus’. It has a traffic analyzer, traffic generator, protocol dissector, and other utilities to allow for an out-of-the box experience.</p>
+<p>Along with this, it has a powerful applet infrastructure that leverages the hardware and existing gateware library to develop custom applets that allow you to interact with SCSI at any layer.</p>
 </section>
 <section id="hardware">
 <h2>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline"></a></h2>
