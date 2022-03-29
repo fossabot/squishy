@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation &mdash; Squishy  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="_static/platformpicker.css" type="text/css" />
+      <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/platformpicker.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Hardware" href="hardware.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Squishy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-prerequisites">Installing Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-dependencies-normal-usage">Installing Dependencies (Normal Usage)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-dependencies-gui-optional">Installing Dependencies (GUI - Optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-dependencies-firmware-build-optional">Installing Dependencies (Firmware Build - Optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-squishy">Installing Squishy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Squish CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">Squish GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applets.html">Squishy Applets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mascot.html">Mascot - Sachi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mascot.html#about">About</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mascot.html#images">Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mascot.html#license">License</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Squishy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Installation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/install.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h1>
+<p><strong>NOTE:</strong> The following instructions are a work-in-progress and may not be entirely up to date.</p>
+<section id="system-requirements">
+<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline"></a></h2>
+<p>Squishy requires Python 3.8 or newer, It has been tested with <a class="reference external" href="https://www.python.org/">CPython</a>.</p>
+<p><a class="reference external" href="https://github.com/YosysHQ/yosys">Yosys</a> 0.10 or newer is also required, along with <a class="reference external" href="https://github.com/amaranth-lang/amaranth">Amaranth HDL</a>.</p>
+</section>
+<section id="installing-prerequisites">
+<h2>Installing Prerequisites<a class="headerlink" href="#installing-prerequisites" title="Permalink to this headline"></a></h2>
+<div class="platform-picker docutils container">
+<div class="platform-choice platform--arch platform-noaltname docutils container">
+<p class="platform-title">Arch Linux</p>
+<p>Install Python, pip, and yosys by running:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo pacman -S python python-pip yosys
+</pre></div>
+</div>
+<p>You may also use the <a class="reference external" href="https://aur.archlinux.org/packages/yosys-nightly">nightly version of Yosys</a> from the <a class="reference external" href="https://aur.archlinux.org/">AUR</a>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git clone https://aur.archlinux.org/yosys-nightly.git
+<span class="gp">$</span> <span class="nb">cd</span> yosys-nightly
+<span class="gp">$</span> makepkg -sic
+</pre></div>
+</div>
+<p>For targeting Squishy rev1 you also need nextpnr-ice40, this can be done by using the <a class="reference external" href="https://aur.archlinux.org/packages/nextpnr-ice40-nightly">nextpnr-ice40-nightly PKGBUILD</a> from the <a class="reference external" href="https://aur.archlinux.org/">AUR</a>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git clone https://aur.archlinux.org/nextpnr-ice40-nightly.git
+<span class="gp">$</span> <span class="nb">cd</span> nextpnr-ice40-nightly
+<span class="gp">$</span> makepkg -sic
+</pre></div>
+</div>
+<p>For targeting Squishy rev2 you also need nextpnr-ecp5, this can be done by using the <a class="reference external" href="https://aur.archlinux.org/packages/nextpnr-ecp5-nightly">nextpnr-ecp5-nightly PKGBUILD</a> from the <a class="reference external" href="https://aur.archlinux.org/">AUR</a>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git clone https://aur.archlinux.org/nextpnr-ecp5-nightly.git
+<span class="gp">$</span> <span class="nb">cd</span> nextpnr-ecp5-nightly
+<span class="gp">$</span> makepkg -sic
+</pre></div>
+</div>
+</div>
+<div class="platform-choice platform--linux platform-noaltname docutils container">
+<p class="platform-title">Other Linux</p>
+<p>TODO</p>
+</div>
+<div class="platform-choice platform--macos platform-noaltname docutils container">
+<p class="platform-title">macOS</p>
+<p>TODO</p>
+</div>
+<div class="platform-choice platform--windows platform-noaltname docutils container">
+<p class="platform-title">Windows</p>
+<p>TODO</p>
+</div>
+</div>
+</section>
+<section id="installing-dependencies-normal-usage">
+<h2>Installing Dependencies (Normal Usage)<a class="headerlink" href="#installing-dependencies-normal-usage" title="Permalink to this headline"></a></h2>
+<div class="platform-picker docutils container">
+<div class="platform-choice platform--arch platform-noaltname docutils container">
+<p class="platform-title">Arch Linux</p>
+<p>All of the dependencies that Squishy requires are in the setup.py, however if you wish to install them manually, you can.</p>
+<p>The following packages can be installed from the Arch Linux repos:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo pacman -S python-jinja python-construct python-pyusb python-tqdm
+</pre></div>
+</div>
+<p>Then install Amaranth HDL from source if not installed already:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install git+https://github.com/amaranth-lang/amaranth.git@main
+<span class="gp">$</span> pip install git+https://github.com/amaranth-lang/amaranth-boards.git@main
+<span class="gp">$</span> pip install git+https://github.com/amaranth-lang/amaranth-stdio.git@main
+</pre></div>
+</div>
+<p>Finally, install the python-usb-protocol and LUNA forks</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install git+https://github.com/dragonmux/python-usb-protocol.git@main
+<span class="gp">$</span> pip install git+https://github.com/shrine-maiden-heavy-industries/luna.git@amaranth#egg<span class="o">=</span>luna-0.1.0.dev0
+</pre></div>
+</div>
+</div>
+<div class="platform-choice platform--linux platform-noaltname docutils container">
+<p class="platform-title">Other Linux</p>
+<p>TODO</p>
+</div>
+<div class="platform-choice platform--macos platform-noaltname docutils container">
+<p class="platform-title">macOS</p>
+<p>TODO</p>
+</div>
+<div class="platform-choice platform--windows platform-noaltname docutils container">
+<p class="platform-title">Windows</p>
+<p>TODO</p>
+</div>
+</div>
+</section>
+<section id="installing-dependencies-gui-optional">
+<h2>Installing Dependencies (GUI - Optional)<a class="headerlink" href="#installing-dependencies-gui-optional" title="Permalink to this headline"></a></h2>
+<div class="platform-picker docutils container">
+<div class="platform-choice platform--arch platform-noaltname docutils container">
+<p class="platform-title">Arch Linux</p>
+<p>To use the Squishy GUI, only PiSide2 is needed in addition to the normal dependencies and can be installed as follows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo pacman -S pyside2
+</pre></div>
+</div>
+</div>
+<div class="platform-choice platform--linux platform-noaltname docutils container">
+<p class="platform-title">Other Linux</p>
+<p>TODO</p>
+</div>
+<div class="platform-choice platform--macos platform-noaltname docutils container">
+<p class="platform-title">macOS</p>
+<p>TODO</p>
+</div>
+<div class="platform-choice platform--windows platform-noaltname docutils container">
+<p class="platform-title">Windows</p>
+<p>TODO</p>
+</div>
+</div>
+</section>
+<section id="installing-dependencies-firmware-build-optional">
+<h2>Installing Dependencies (Firmware Build - Optional)<a class="headerlink" href="#installing-dependencies-firmware-build-optional" title="Permalink to this headline"></a></h2>
+<p>There is also the ability in squishy to build machine code components, which need <a class="reference external" href="https://mesonbuild.com/">Meson</a>, <a class="reference external" href="https://ninja-build.org/">Ninja</a>, and optionally a cross-compiler toolchain.</p>
+<div class="platform-picker docutils container">
+<div class="platform-choice platform--arch platform-noaltname docutils container">
+<p class="platform-title">Arch Linux</p>
+<p>Meson and Ninja can be installed from the repos as follows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo pacman -S meson ninja
+</pre></div>
+</div>
+</div>
+<div class="platform-choice platform--linux platform-noaltname docutils container">
+<p class="platform-title">Other Linux</p>
+<p>TODO</p>
+</div>
+<div class="platform-choice platform--macos platform-noaltname docutils container">
+<p class="platform-title">macOS</p>
+<p>TODO</p>
+</div>
+<div class="platform-choice platform--windows platform-noaltname docutils container">
+<p class="platform-title">Windows</p>
+<p>TODO</p>
+</div>
+</div>
+</section>
+<section id="installing-squishy">
+<h2>Installing Squishy<a class="headerlink" href="#installing-squishy" title="Permalink to this headline"></a></h2>
+<div class="platform-picker docutils container">
+<div class="platform-choice platform--linux platform-noaltname docutils container">
+<p class="platform-title">Linux</p>
+<p>Install a non-editable snapshot by running the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip3 install --user <span class="s1">&#39;git+https://github.com/lethalbit/squishy.git&#39;</span>
+</pre></div>
+</div>
+<p>To install an editable development snapshot, run the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git clone https://github.com/lethalbit/squishy.git
+<span class="gp">$</span> <span class="nb">cd</span> squishy
+<span class="gp">$</span> pip3 install --user --editable .
+</pre></div>
+</div>
+</div>
+<div class="platform-choice platform--macos platform-noaltname docutils container">
+<p class="platform-title">macOS</p>
+<p>TODO</p>
+</div>
+<div class="platform-choice platform--windows platform-noaltname docutils container">
+<p class="platform-title">Windows</p>
+<p>TODO</p>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="hardware.html" class="btn btn-neutral float-right" title="Hardware" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Aki &#34;lethalbit&#34; Van Ness, et. al..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
