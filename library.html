@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hardware &mdash; Squishy  documentation</title>
+  <title>Squishy as a Library &mdash; Squishy  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
@@ -22,8 +22,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Squishy as a Library" href="library.html" />
-    <link rel="prev" title="Installation" href="install.html" /> 
+    <link rel="next" title="Getting Started" href="getting_started.html" />
+    <link rel="prev" title="Hardware" href="hardware.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -52,29 +52,29 @@
 <li class="toctree-l2"><a class="reference internal" href="install.html#installing-squishy">Installing Squishy</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Hardware</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#revision-0">Revision 0</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#capabilities">Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#revision-0">Revision 0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html#capabilities">Capabilities</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#revision-1">Revision 1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Capabilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#revision-1">Revision 1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html#id1">Capabilities</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#revision-2">Revision 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Capabilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#revision-2">Revision 2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html#id2">Capabilities</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#getting-squishy-hardware">Getting Squishy Hardware</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#buying-hardware">Buying Hardware</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#building-hardware">Building Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#getting-squishy-hardware">Getting Squishy Hardware</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html#buying-hardware">Buying Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html#building-hardware">Building Hardware</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="library.html">Squishy as a Library</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="library.html#gateware-library">Gateware Library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="library.html#python-library">Python Library</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Squishy as a Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gateware-library">Gateware Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-library">Python Library</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
@@ -127,9 +127,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Hardware</li>
+      <li>Squishy as a Library</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/hardware.md.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/library.md.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -137,48 +137,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="hardware">
-<h1>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline"></a></h1>
-<p>The squishy hardware is broken up into revisions and release levels. Each revision has breaking changes when it comes to hardware, and so they are their own platforms, however, release levels within each revision are hardware compatible with each other.</p>
-<p>Both the revision and the release level start at 0, and increment by one. If the release level is omitted, it is assumed to be 0.</p>
-<p>The format follows the <code class="docutils literal notranslate"><span class="pre">rev&lt;#&gt;[.#]</span></code> format, where <code class="docutils literal notranslate"><span class="pre">rev&lt;#&gt;</span></code> is the hardware revision and <code class="docutils literal notranslate"><span class="pre">[.#]</span></code> is the release level. so the following string, <code class="docutils literal notranslate"><span class="pre">rev8.3</span></code> is hardware revision 8, release 3.</p>
-<section id="revision-0">
-<h2>Revision 0<a class="headerlink" href="#revision-0" title="Permalink to this headline"></a></h2>
-<p>Hardware revision 0 was a preliminary engineering effort and has not seen a release.</p>
-<section id="capabilities">
-<h3>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this headline"></a></h3>
-<p>Due to a design flaw in the SCSI front-end, rev0 was entirely unusable.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="squishy-as-a-library">
+<h1>Squishy as a Library<a class="headerlink" href="#squishy-as-a-library" title="Permalink to this headline"></a></h1>
+<p>Squishy, along with being a standalone tool, is also an Amaranth HDL gateware library for interacting with SCSI, as well as a Python library for dealing with SCSI packets.</p>
+<section id="gateware-library">
+<h2>Gateware Library<a class="headerlink" href="#gateware-library" title="Permalink to this headline"></a></h2>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Write this section</p>
+</div>
 </section>
-</section>
-<section id="revision-1">
-<h2>Revision 1<a class="headerlink" href="#revision-1" title="Permalink to this headline"></a></h2>
-<p>Hardware revision 1 was the first release of the Squishy hardware, it is only capable of speaking SCSI HVD. Revision 1 release 0 has some problems that can be fixed with two component replacements, which was not enough to constitute a whole new release.</p>
-<section id="id1">
-<h3>Capabilities<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
-<p>Revision 1 is still in the validation phase, as such is capabilities have not been fully cataloged.</p>
-</section>
-</section>
-<section id="revision-2">
-<h2>Revision 2<a class="headerlink" href="#revision-2" title="Permalink to this headline"></a></h2>
-<p>Hardware revision 2 is an overhaul in an attempt to increase the abilities of Squishy, it replaces the iCE40 FPGA with the ECP5-5G allowing for USB-3.</p>
-<p>It also has a entirely re-designed front-end allowing for it to speak all possible variations of SCSI.</p>
-<section id="id2">
-<h3>Capabilities<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
-<p>Revision 2 is still in the engineering phase, as such is capabilities have not been fully cataloged.</p>
-</section>
-</section>
-<section id="getting-squishy-hardware">
-<h2>Getting Squishy Hardware<a class="headerlink" href="#getting-squishy-hardware" title="Permalink to this headline"></a></h2>
-<p>There are two main ways to get squishy hardware, buying it, or building it.</p>
-<section id="buying-hardware">
-<h3>Buying Hardware<a class="headerlink" href="#buying-hardware" title="Permalink to this headline"></a></h3>
-<p>Currently, as of 2022-03-29, Squishy hardware is not available for sale, however, once engineering and validation of Revision 2 is completed, rev2 units are expected to be available to purchase.</p>
-</section>
-<section id="building-hardware">
-<h3>Building Hardware<a class="headerlink" href="#building-hardware" title="Permalink to this headline"></a></h3>
-<p>Every released version of the Squishy hardware is archived and has full schematics, gerbers, Bill of Materials, and KiCad project files available.</p>
-<p>The smallest parts are 0402 and all revisions contain at least one large BGA part. Assembly via a Pick-and-Place machine has not been tested, but should be possible as DFM was a large part of the process.</p>
-</section>
+<section id="python-library">
+<h2>Python Library<a class="headerlink" href="#python-library" title="Permalink to this headline"></a></h2>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Write this section</p>
+</div>
 </section>
 </section>
 
@@ -186,8 +160,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="install.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="library.html" class="btn btn-neutral float-right" title="Squishy as a Library" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="hardware.html" class="btn btn-neutral float-left" title="Hardware" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="getting_started.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

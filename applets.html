@@ -22,8 +22,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Mascot - Sachi" href="mascot.html" />
-    <link rel="prev" title="Squish GUI" href="gui.html" /> 
+    <link rel="next" title="Tutorials" href="tutorials/index.html" />
+    <link rel="prev" title="GUI" href="gui.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -52,11 +52,59 @@
 <li class="toctree-l2"><a class="reference internal" href="install.html#installing-squishy">Installing Squishy</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html">Squish CLI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gui.html">Squish GUI</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Squishy Applets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#revision-0">Revision 0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html#capabilities">Capabilities</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#revision-1">Revision 1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html#id1">Capabilities</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#revision-2">Revision 2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html#id2">Capabilities</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#getting-squishy-hardware">Getting Squishy Hardware</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html#buying-hardware">Buying Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html#building-hardware">Building Hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Squishy as a Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="library.html#gateware-library">Gateware Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library.html#python-library">Python Library</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#connecting-the-hardware">Connecting the Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#using-the-cli">Using the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#using-the-gui">Using the GUI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#invocation">Invocation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gui.html#invocation">Invocation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Squishy Applets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-an-applet">What is an Applet?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#built-in-applets">Built-in Applets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#analyzer">Analyzer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#taperipper">Taperipper</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-applets">Custom Applets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/custom_applet.html">Custom Applets</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="mascot.html">Mascot - Sachi</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="mascot.html#about">About</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mascot.html#images">Images</a></li>
@@ -91,14 +139,35 @@
              
   <section class="tex2jax_ignore mathjax_ignore" id="squishy-applets">
 <h1>Squishy Applets<a class="headerlink" href="#squishy-applets" title="Permalink to this headline"></a></h1>
+<section id="what-is-an-applet">
+<h2>What is an Applet?<a class="headerlink" href="#what-is-an-applet" title="Permalink to this headline"></a></h2>
+<p>An applet is a portion of Amaranth HDL and supporting Python code that give functionality to the Squishy hardware.</p>
+</section>
+<section id="built-in-applets">
+<h2>Built-in Applets<a class="headerlink" href="#built-in-applets" title="Permalink to this headline"></a></h2>
+<p>There are currently two built-in Applets, the analyzer, and taperipper.</p>
+<section id="analyzer">
+<h3>Analyzer<a class="headerlink" href="#analyzer" title="Permalink to this headline"></a></h3>
+<p>The analyzer applet turns squishy into a passive SCSI bus sniffer, allowing for you to inspect, copy, replay, and modify SCSI traffic.</p>
+</section>
+<section id="taperipper">
+<h3>Taperipper<a class="headerlink" href="#taperipper" title="Permalink to this headline"></a></h3>
+<p>The taperipper applet turns squishy into a bootable interface for SCSI based 9-track tape drives, to allow for booting modern machines off of tape.</p>
+</section>
+</section>
+<section id="custom-applets">
+<h2>Custom Applets<a class="headerlink" href="#custom-applets" title="Permalink to this headline"></a></h2>
+<p>Squishy allows you to run your own custom applets, any python packages in the <code class="docutils literal notranslate"><span class="pre">SQUISHY_APPLETS</span></code> directory are attempted to be loaded as an applet, and then exposed to the user to allow them to invoke.</p>
+<p>For more details, see the tutorial on custom applets.</p>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="gui.html" class="btn btn-neutral float-left" title="Squish GUI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="mascot.html" class="btn btn-neutral float-right" title="Mascot - Sachi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gui.html" class="btn btn-neutral float-left" title="GUI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorials/index.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

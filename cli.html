@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Squish CLI &mdash; Squishy  documentation</title>
+  <title>CLI &mdash; Squishy  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
@@ -22,7 +22,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Squish GUI" href="gui.html" />
+    <link rel="next" title="GUI" href="gui.html" />
     <link rel="prev" title="Getting Started" href="getting_started.html" /> 
 </head>
 
@@ -52,11 +52,59 @@
 <li class="toctree-l2"><a class="reference internal" href="install.html#installing-squishy">Installing Squishy</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Squish CLI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gui.html">Squish GUI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="applets.html">Squishy Applets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#revision-0">Revision 0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html#capabilities">Capabilities</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#revision-1">Revision 1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html#id1">Capabilities</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#revision-2">Revision 2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html#id2">Capabilities</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#getting-squishy-hardware">Getting Squishy Hardware</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html#buying-hardware">Buying Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html#building-hardware">Building Hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Squishy as a Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="library.html#gateware-library">Gateware Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library.html#python-library">Python Library</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#connecting-the-hardware">Connecting the Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#using-the-cli">Using the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#using-the-gui">Using the GUI</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CLI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#invocation">Invocation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gui.html#invocation">Invocation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="applets.html">Squishy Applets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="applets.html#what-is-an-applet">What is an Applet?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="applets.html#built-in-applets">Built-in Applets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="applets.html#analyzer">Analyzer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="applets.html#taperipper">Taperipper</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="applets.html#custom-applets">Custom Applets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/custom_applet.html">Custom Applets</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="mascot.html">Mascot - Sachi</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="mascot.html#about">About</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mascot.html#images">Images</a></li>
@@ -79,7 +127,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Squish CLI</li>
+      <li>CLI</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/cli.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -89,8 +137,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="squish-cli">
-<h1>Squish CLI<a class="headerlink" href="#squish-cli" title="Permalink to this headline"></a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="cli">
+<h1>CLI<a class="headerlink" href="#cli" title="Permalink to this headline"></a></h1>
+<p>The CLI is the main way to interact with squishy, most references to interacting with Squishy will assume you are using the CLI.</p>
+<section id="invocation">
+<h2>Invocation<a class="headerlink" href="#invocation" title="Permalink to this headline"></a></h2>
+<p>To invoke the squishy CLI, you can simply run the <code class="docutils literal notranslate"><span class="pre">squishy</span></code> command if you have squishy installed to your system, or if you are using it out of a clone of the repo, invoking <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">squishy.py</span></code> in the root of the repository will have the same effect.</p>
+</section>
 </section>
 
 
@@ -98,7 +151,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="getting_started.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="gui.html" class="btn btn-neutral float-right" title="Squish GUI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gui.html" class="btn btn-neutral float-right" title="GUI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
