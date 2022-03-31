@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>squishy.scsi.messages &mdash; Squishy 0.1.dev1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/platformpicker.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/styles.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/platformpicker.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Getting Started" href="../../getting_started.html" />
+    <link rel="prev" title="squishy.scsi.commands.worm" href="commands/worm.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Squishy
+          </a>
+              <div class="version">
+                0.1.dev1+gc3955cb
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../install.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install.html#installing-prerequisites">Installing Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install.html#installing-dependencies-normal-usage">Installing Dependencies (Normal Usage)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install.html#installing-dependencies-gui-optional">Installing Dependencies (GUI - Optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install.html#installing-dependencies-firmware-build-optional">Installing Dependencies (Firmware Build - Optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install.html#installing-squishy">Installing Squishy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware.html#revision-0">Revision 0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware.html#capabilities">Capabilities</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware.html#revision-1">Revision 1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware.html#id1">Capabilities</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware.html#revision-2">Revision 2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware.html#id2">Capabilities</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware.html#getting-squishy-hardware">Getting Squishy Hardware</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware.html#buying-hardware">Buying Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware.html#building-hardware">Building Hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Squishy as a Library</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../gateware/index.html">Gateware Library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gateware/core/index.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.core</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gateware/core/multiboot.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.core.multiboot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gateware/core/pll.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.core.pll</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gateware/core/scsi.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.core.scsi</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gateware/core/spi.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.core.spi</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gateware/core/uart.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.core.uart</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gateware/core/usb.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.core.usb</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gateware/platform/index.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gateware/platform/rev1.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform.rev1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gateware/platform/rev2.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform.rev2</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gateware/scsi/index.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gateware/scsi/common.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi.common</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gateware/scsi/device.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi.device</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gateware/scsi/initiator.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi.initiator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gateware/scsi/scsi1.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi.scsi1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gateware/scsi/scsi2.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi.scsi2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gateware/scsi/scsi3.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi.scsi3</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Python Library</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="commands/index.html"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="commands/common.html"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands.common</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="commands/direct.html"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="commands/printer.html"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands.printer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="commands/processor.html"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands.processor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="commands/ro_direct.html"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands.ro_direct</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="commands/sequential.html"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands.sequential</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="commands/worm.html"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands.worm</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.messages</span></code></a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started.html#connecting-the-hardware">Connecting the Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started.html#using-the-cli">Using the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started.html#using-the-gui">Using the GUI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli.html">CLI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cli.html#invocation">Invocation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gui.html">GUI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../gui.html#invocation">Invocation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../applets.html">Squishy Applets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../applets.html#what-is-an-applet">What is an Applet?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../applets.html#built-in-applets">Built-in Applets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../applets.html#analyzer">Analyzer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../applets.html#taperipper">Taperipper</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../applets.html#custom-applets">Custom Applets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/custom_applet.html">Custom Applets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../mascot.html">Mascot - Sachi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../mascot.html#about">About</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mascot.html#images">Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mascot.html#license">License</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Squishy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Squishy as a Library</a> &raquo;</li>
+          <li><a href="index.html">Python Library</a> &raquo;</li>
+      <li><code class="docutils literal notranslate"><span class="pre">squishy.scsi.messages</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/library/python/messages.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="squishy-scsi-messages">
+<h1><code class="docutils literal notranslate"><span class="pre">squishy.scsi.messages</span></code><a class="headerlink" href="#squishy-scsi-messages" title="Permalink to this headline"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-squishy.scsi.messages"></span><dl class="py class">
+<dt class="sig sig-object py" id="squishy.scsi.messages.MessageCodes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">squishy.scsi.messages.</span></span><span class="sig-name descname"><span class="pre">MessageCodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.scsi.messages.MessageCodes" title="Permalink to this definition"></a></dt>
+<dd><p>An enumeration.</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="commands/worm.html" class="btn btn-neutral float-left" title="squishy.scsi.commands.worm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../getting_started.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Aki &#34;lethalbit&#34; Van Ness, et. al..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
