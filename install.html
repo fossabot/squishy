@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &mdash; Squishy  documentation</title>
+  <title>Installation &mdash; Squishy 0.1.dev1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
@@ -33,6 +33,9 @@
         <div class="wy-side-nav-search" >
             <a href="index.html" class="icon icon-home"> Squishy
           </a>
+              <div class="version">
+                0.1.dev1+g9eb9a79
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -137,7 +140,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="installation">
+  <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h1>
 <p><strong>NOTE:</strong> The following instructions are a work-in-progress and may not be entirely up to date.</p>
 <section id="system-requirements">
@@ -151,25 +154,25 @@
 <div class="platform-choice platform--arch platform-noaltname docutils container">
 <p class="platform-title">Arch Linux</p>
 <p>Install Python, pip, and yosys by running:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo pacman -S python python-pip yosys
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo pacman -S python python-pip yosys
 </pre></div>
 </div>
 <p>You may also use the <a class="reference external" href="https://aur.archlinux.org/packages/yosys-nightly">nightly version of Yosys</a> from the <a class="reference external" href="https://aur.archlinux.org/">AUR</a>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git clone https://aur.archlinux.org/yosys-nightly.git
-<span class="gp">$</span> <span class="nb">cd</span> yosys-nightly
-<span class="gp">$</span> makepkg -sic
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git clone https://aur.archlinux.org/yosys-nightly.git
+<span class="gp">$ </span><span class="nb">cd</span> yosys-nightly
+<span class="gp">$ </span>makepkg -sic
 </pre></div>
 </div>
 <p>For targeting Squishy rev1 you also need nextpnr-ice40, this can be done by using the <a class="reference external" href="https://aur.archlinux.org/packages/nextpnr-ice40-nightly">nextpnr-ice40-nightly PKGBUILD</a> from the <a class="reference external" href="https://aur.archlinux.org/">AUR</a>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git clone https://aur.archlinux.org/nextpnr-ice40-nightly.git
-<span class="gp">$</span> <span class="nb">cd</span> nextpnr-ice40-nightly
-<span class="gp">$</span> makepkg -sic
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git clone https://aur.archlinux.org/nextpnr-ice40-nightly.git
+<span class="gp">$ </span><span class="nb">cd</span> nextpnr-ice40-nightly
+<span class="gp">$ </span>makepkg -sic
 </pre></div>
 </div>
 <p>For targeting Squishy rev2 you also need nextpnr-ecp5, this can be done by using the <a class="reference external" href="https://aur.archlinux.org/packages/nextpnr-ecp5-nightly">nextpnr-ecp5-nightly PKGBUILD</a> from the <a class="reference external" href="https://aur.archlinux.org/">AUR</a>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git clone https://aur.archlinux.org/nextpnr-ecp5-nightly.git
-<span class="gp">$</span> <span class="nb">cd</span> nextpnr-ecp5-nightly
-<span class="gp">$</span> makepkg -sic
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git clone https://aur.archlinux.org/nextpnr-ecp5-nightly.git
+<span class="gp">$ </span><span class="nb">cd</span> nextpnr-ecp5-nightly
+<span class="gp">$ </span>makepkg -sic
 </pre></div>
 </div>
 </div>
@@ -203,18 +206,18 @@
 <p class="platform-title">Arch Linux</p>
 <p>All of the dependencies that Squishy requires are in the setup.py, however if you wish to install them manually, you can.</p>
 <p>The following packages can be installed from the Arch Linux repos:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo pacman -S python-jinja python-construct python-pyusb python-tqdm
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo pacman -S python-jinja python-construct python-pyusb python-tqdm
 </pre></div>
 </div>
 <p>Then install Amaranth HDL from source if not installed already:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install git+https://github.com/amaranth-lang/amaranth.git@main
-<span class="gp">$</span> pip install git+https://github.com/amaranth-lang/amaranth-boards.git@main
-<span class="gp">$</span> pip install git+https://github.com/amaranth-lang/amaranth-stdio.git@main
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip install git+https://github.com/amaranth-lang/amaranth.git@main
+<span class="gp">$ </span>pip install git+https://github.com/amaranth-lang/amaranth-boards.git@main
+<span class="gp">$ </span>pip install git+https://github.com/amaranth-lang/amaranth-stdio.git@main
 </pre></div>
 </div>
 <p>Finally, install the python-usb-protocol and LUNA forks</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install git+https://github.com/dragonmux/python-usb-protocol.git@main
-<span class="gp">$</span> pip install git+https://github.com/shrine-maiden-heavy-industries/luna.git@amaranth#egg<span class="o">=</span>luna-0.1.0.dev0
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip install git+https://github.com/dragonmux/python-usb-protocol.git@main
+<span class="gp">$ </span>pip install git+https://github.com/shrine-maiden-heavy-industries/luna.git@amaranth#egg<span class="o">=</span>luna-0.1.0.dev0
 </pre></div>
 </div>
 </div>
@@ -247,7 +250,7 @@
 <div class="platform-choice platform--arch platform-noaltname docutils container">
 <p class="platform-title">Arch Linux</p>
 <p>To use the Squishy GUI, only PiSide2 is needed in addition to the normal dependencies and can be installed as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo pacman -S pyside2
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo pacman -S pyside2
 </pre></div>
 </div>
 </div>
@@ -281,7 +284,7 @@
 <div class="platform-choice platform--arch platform-noaltname docutils container">
 <p class="platform-title">Arch Linux</p>
 <p>Meson and Ninja can be installed from the repos as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo pacman -S meson ninja
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo pacman -S meson ninja
 </pre></div>
 </div>
 </div>
@@ -314,13 +317,13 @@
 <div class="platform-choice platform--linux platform-noaltname docutils container">
 <p class="platform-title">Linux</p>
 <p>Install a non-editable snapshot by running the following:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip3 install --user <span class="s1">&#39;git+https://github.com/lethalbit/squishy.git&#39;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip3 install --user <span class="s1">&#39;git+https://github.com/lethalbit/squishy.git&#39;</span>
 </pre></div>
 </div>
 <p>To install an editable development snapshot, run the following:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git clone https://github.com/lethalbit/squishy.git
-<span class="gp">$</span> <span class="nb">cd</span> squishy
-<span class="gp">$</span> pip3 install --user --editable .
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git clone https://github.com/lethalbit/squishy.git
+<span class="gp">$ </span><span class="nb">cd</span> squishy
+<span class="gp">$ </span>pip3 install --user --editable .
 </pre></div>
 </div>
 </div>
