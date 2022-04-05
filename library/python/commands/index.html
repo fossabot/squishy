@@ -8,6 +8,7 @@
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/sphinx_construct.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/platformpicker.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/styles.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -34,7 +35,7 @@
             <a href="../../../index.html" class="icon icon-home"> Squishy
           </a>
               <div class="version">
-                0.1.dev1+g743cdb3
+                0.1.dev1+gff15043
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -188,7 +189,1123 @@
 <h1><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands</span></code><a class="headerlink" href="#squishy-scsi-commands" title="Permalink to this headline"></a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<span class="target" id="module-squishy.scsi.commands"></span></section>
+<span class="target" id="module-squishy.scsi.commands"></span><p>This modules defines the core SCSI command structure.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="squishy.scsi.commands.group_code">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">group_code</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Enum</span></em><a class="headerlink" href="#squishy.scsi.commands.group_code" title="Permalink to this definition"></a></dt>
+<dd><p>SCSI Command Group Codes</p>
+<blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Command</span> <span class="pre">Group</span> <span class="pre">Code</span></span></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py" id="squishy.scsi.commands.squishy.scsi.commands.group_code.Group0">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.group_code.</span></span><span class="sig-name descname"><span class="pre">Group0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger&lt;3&gt;</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0b000</span></em><a class="headerlink" href="#squishy.scsi.commands.squishy.scsi.commands.group_code.Group0" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="squishy.scsi.commands.squishy.scsi.commands.group_code.Group1">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.group_code.</span></span><span class="sig-name descname"><span class="pre">Group1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger&lt;3&gt;</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0b001</span></em><a class="headerlink" href="#squishy.scsi.commands.squishy.scsi.commands.group_code.Group1" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="squishy.scsi.commands.squishy.scsi.commands.group_code.Group2">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.group_code.</span></span><span class="sig-name descname"><span class="pre">Group2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger&lt;3&gt;</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0b010</span></em><a class="headerlink" href="#squishy.scsi.commands.squishy.scsi.commands.group_code.Group2" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="squishy.scsi.commands.squishy.scsi.commands.group_code.Group3">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.group_code.</span></span><span class="sig-name descname"><span class="pre">Group3</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger&lt;3&gt;</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0b011</span></em><a class="headerlink" href="#squishy.scsi.commands.squishy.scsi.commands.group_code.Group3" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="squishy.scsi.commands.squishy.scsi.commands.group_code.Group4">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.group_code.</span></span><span class="sig-name descname"><span class="pre">Group4</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger&lt;3&gt;</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0b100</span></em><a class="headerlink" href="#squishy.scsi.commands.squishy.scsi.commands.group_code.Group4" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="squishy.scsi.commands.squishy.scsi.commands.group_code.Group5">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.group_code.</span></span><span class="sig-name descname"><span class="pre">Group5</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger&lt;3&gt;</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0b101</span></em><a class="headerlink" href="#squishy.scsi.commands.squishy.scsi.commands.group_code.Group5" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="squishy.scsi.commands.squishy.scsi.commands.group_code.Group6">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.group_code.</span></span><span class="sig-name descname"><span class="pre">Group6</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger&lt;3&gt;</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0b110</span></em><a class="headerlink" href="#squishy.scsi.commands.squishy.scsi.commands.group_code.Group6" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="squishy.scsi.commands.squishy.scsi.commands.group_code.Group7">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.group_code.</span></span><span class="sig-name descname"><span class="pre">Group7</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger&lt;3&gt;</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0b111</span></em><a class="headerlink" href="#squishy.scsi.commands.squishy.scsi.commands.group_code.Group7" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="squishy.scsi.commands.command">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">command</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Struct</span></em><a class="headerlink" href="#squishy.scsi.commands.command" title="Permalink to this definition"></a></dt>
+<dd><p>SCSI Command Structure</p>
+<blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SCSI</span> <span class="pre">Command</span></span></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Opcode</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Union</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">FormatField</span></em></dt>
+<dd><blockquote>
+<div><p><strong>Endian:</strong> little</p>
+<p><strong>Size:</strong> 1</p>
+<p><strong>Underlying Types:</strong></p>
+<blockquote>
+<div><p>Type: int</p>
+<p>Size: 1</p>
+<p>Sign: unsigned</p>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Parsed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Struct</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Group</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Enum</span></em></dt>
+<dd><blockquote>
+<div><p><a class="reference external" href="squishy_scsi_commands_command_group_code">See: “Command Group Code”</a></p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Command</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 5 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Switch</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Switch</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Six-byte</span> <span class="pre">Command</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Group0</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Test</span> <span class="pre">Unit</span> <span class="pre">Ready</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Union</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em></dt>
+<dd><blockquote>
+<div><p><a class="reference external" href="squishy_scsi_commands_re-zero_unit">See: “Re-Zero Unit”</a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Rewind</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Struct</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 4 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Immediate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Flag</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BytesInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 byte integer.</p>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Request</span> <span class="pre">Sense</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Union</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em></dt>
+<dd><blockquote>
+<div><p><a class="reference external" href="squishy_scsi_commands_format_unit">See: “Format Unit”</a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Printer</span></span></em><span class="sig-paren">)</span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Struct</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 2 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">TxLen</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BytesInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 byte integer.</p>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Read</span> <span class="pre">Block</span> <span class="pre">Limits</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 29 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Reassign</span> <span class="pre">Blocks</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Union</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em></dt>
+<dd><blockquote>
+<div><p><a class="reference external" href="squishy_scsi_commands_read_(direct_access)">See: “Read (Direct Access)”</a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Sequential</span></span></em><span class="sig-paren">)</span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Struct</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 4 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Fixed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Flag</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">TXLen</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BytesInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 byte integer.</p>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Union</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em></dt>
+<dd><blockquote>
+<div><p><a class="reference external" href="squishy_scsi_commands_write_(direct_access)">See: “Write (Direct Access)”</a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Sequential</span></span></em><span class="sig-paren">)</span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Struct</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 4 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Fixed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Flag</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">TXLen</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BytesInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 byte integer.</p>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Print</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Struct</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 5 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">TxLen</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BytesInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 byte integer.</p>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Union</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em></dt>
+<dd><blockquote>
+<div><p><a class="reference external" href="squishy_scsi_commands_seek_(direct_access)">See: “Seek (Direct Access)”</a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Track</span> <span class="pre">Select</span></span></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 21 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">TrackVal</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">FormatField</span></em></dt>
+<dd><blockquote>
+<div><p><strong>Endian:</strong> little</p>
+<p><strong>Size:</strong> 1</p>
+<p><strong>Underlying Types:</strong></p>
+<blockquote>
+<div><p>Type: int</p>
+<p>Size: 1</p>
+<p>Sign: unsigned</p>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Slew</span> <span class="pre">and</span> <span class="pre">Print</span></span></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 4 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Channel</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 1 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Read</span> <span class="pre">Reversed</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 4 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Fixed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Flag</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">TXLen</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BytesInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 byte integer.</p>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Union</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Write</span> <span class="pre">Filemarks</span></span></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 5 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">FilemarkNum</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BytesInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 byte integer.</p>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Flush</span> <span class="pre">Buffer</span></span></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 28 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Space</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">17</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Code</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 2 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BytesInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 byte integer.</p>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Inquiry</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">18</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Verify</span> <span class="pre">(Sequential)</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">19</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">ByteCmp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Flag</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Fixed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Flag</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">VerifyLen</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BytesInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 byte integer.</p>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Union</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">20</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Recover</span> <span class="pre">Buffered</span> <span class="pre">Date</span></span></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 4 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Fixed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Flag</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">TXLen</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BytesInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 byte integer.</p>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Union</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">21</span></em></dt>
+<dd><blockquote>
+<div><p><a class="reference external" href="squishy_scsi_commands_mode_select">See: “Mode Select”</a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Mode</span> <span class="pre">Select</span> <span class="pre">(Sequential)</span></span></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 21 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">ParamLen</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">FormatField</span></em></dt>
+<dd><blockquote>
+<div><p><strong>Endian:</strong> little</p>
+<p><strong>Size:</strong> 1</p>
+<p><strong>Underlying Types:</strong></p>
+<blockquote>
+<div><p>Type: int</p>
+<p>Size: 1</p>
+<p>Sign: unsigned</p>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Union</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">22</span></em></dt>
+<dd><blockquote>
+<div><p><a class="reference external" href="squishy_scsi_commands_reserve">See: “Reserve”</a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Reserve</span> <span class="pre">Unit</span> <span class="pre">(Sequential)</span></span></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">ThirdParty</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Flag</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">ThirdPartyDID</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 25 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Union</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23</span></em></dt>
+<dd><blockquote>
+<div><p><a class="reference external" href="squishy_scsi_commands_release">See: “Release”</a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Release</span> <span class="pre">Unit</span> <span class="pre">(Sequential)</span></span></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">ThirdParty</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Flag</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">ThirdPartyDID</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 25 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Copy</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">24</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Erase</span> <span class="pre">(Sequential)</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">25</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 4 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Long</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Flag</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BytesInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 byte integer.</p>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Union</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">26</span></em></dt>
+<dd><blockquote>
+<div><p><a class="reference external" href="squishy_scsi_commands_mode_sense">See: “Mode Sense”</a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Mode</span> <span class="pre">Sense</span> <span class="pre">(Sequential)</span></span></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 21 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">AllocLen</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">FormatField</span></em></dt>
+<dd><blockquote>
+<div><p><strong>Endian:</strong> little</p>
+<p><strong>Size:</strong> 1</p>
+<p><strong>Underlying Types:</strong></p>
+<blockquote>
+<div><p>Type: int</p>
+<p>Size: 1</p>
+<p>Sign: unsigned</p>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Union</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">27</span></em></dt>
+<dd><blockquote>
+<div><p><a class="reference external" href="squishy_scsi_commands_start/stop_unit">See: “Start/Stop Unit”</a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Load/Unload</span></span></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 4 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Immediate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Flag</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 22 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">ReTension</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Flag</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Load</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Flag</span></em></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Receive</span> <span class="pre">Diagnostic</span> <span class="pre">Results</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">28</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Send</span> <span class="pre">Diagnostic</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">29</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Union</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30</span></em></dt>
+<dd><blockquote>
+<div><p><a class="reference external" href="squishy_scsi_commands_prevent/allow_media_removal">See: “Prevent/Allow Media Removal”</a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Prevent/Allow</span> <span class="pre">Media</span> <span class="pre">Removal</span> <span class="pre">(Sequential)</span></span></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 3 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 28 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Prevent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Flag</span></em></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Switch</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Ten-byte</span> <span class="pre">Command</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Group1</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Read</span> <span class="pre">Capacity</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Read</span> <span class="pre">(Direct</span> <span class="pre">Access)</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Write</span> <span class="pre">(Direct</span> <span class="pre">Access)</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Seek</span> <span class="pre">(Direct</span> <span class="pre">Access)</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Write</span> <span class="pre">and</span> <span class="pre">Verify</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">14</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Verify</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Search</span> <span class="pre">Data</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Search</span> <span class="pre">Data</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">17</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Search</span> <span class="pre">Data</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">18</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Set</span> <span class="pre">Limits</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">19</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Compare</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">25</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Transformed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Copy</span> <span class="pre">and</span> <span class="pre">Verify</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">26</span></em></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Pass</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Vendor</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Group2</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Pass</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Reserved</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Group3</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Pass</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Reserved</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Group4</span></em></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Control</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Struct</span></em></dt>
+<dd><blockquote>
+<div><dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Vendor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 2 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em></dt>
+<dd><blockquote>
+<div><p>Unsigned 4 bit integer.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Flag</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Flag</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">Link</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Flag</span></em></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</section>
 
 
            </div>
