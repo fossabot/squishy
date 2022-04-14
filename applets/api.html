@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Analyzer Applet &mdash; Squishy 0.1.dev1 documentation</title>
+  <title>Applet API &mdash; Squishy 0.1.dev1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/styles.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
@@ -23,8 +23,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Taperipper Applet" href="taperipper.html" />
-    <link rel="prev" title="Squishy Applets" href="index.html" /> 
+    <link rel="next" title="Tutorials" href="../tutorials/index.html" />
+    <link rel="prev" title="Taperipper Applet" href="taperipper.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -141,9 +141,9 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Squishy Applets</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Analyzer Applet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzer.html">Analyzer Applet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="taperipper.html">Taperipper Applet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html">Applet API</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Applet API</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -182,9 +182,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Squishy Applets</a> &raquo;</li>
-      <li>Analyzer Applet</li>
+      <li>Applet API</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/applets/analyzer.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/applets/api.md.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -192,21 +192,181 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="analyzer-applet">
-<h1>Analyzer Applet<a class="headerlink" href="#analyzer-applet" title="Permalink to this headline"></a></h1>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Flesh this out</p>
+  <section id="applet-api">
+<h1>Applet API<a class="headerlink" href="#applet-api" title="Permalink to this headline"></a></h1>
+<div class="toctree-wrapper compound">
 </div>
-<p>The analyzer applet turns squishy into a passive SCSI bus sniffer, allowing for you to inspect, copy, replay, and modify SCSI traffic.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">squishy.applets.</span></span><span class="sig-name descname"><span class="pre">SquishyApplet</span></span><a class="headerlink" href="#squishy.applets.SquishyApplet" title="Permalink to this definition"></a></dt>
+<dd><p>Squishy applet base class</p>
+<p>This is the abstract base class that is used
+to implement any possible applet for squishy.</p>
+<p>It represents a combination of client-side python,
+and gateware that will run the the hardware platform.</p>
+<p>Users can then invoke the build and execution of implemented
+applets by name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>preview</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – If the applet is a preview/pre-release applet.</p></li>
+<li><p><strong>pretty_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – A pretty string name of the applet.</p></li>
+<li><p><strong>short_help</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – A short section of help for the applet.</p></li>
+<li><p><strong>help</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – A longer more detailed help string.</p></li>
+<li><p><strong>description</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – A brief description about the applet.</p></li>
+<li><p><strong>hardware_rev</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – A single string, or a tuple of strings for supported hardware revisions</p></li>
+<li><p><strong>supports_gui</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Indicates if the applet has a GUI mode.</p></li>
+<li><p><strong>supports_repl</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Indicates if the applet has a REPL mode.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet.supported_platform">
+<span class="sig-name descname"><span class="pre">supported_platform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">platform</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.applets.SquishyApplet.supported_platform" title="Permalink to this definition"></a></dt>
+<dd><p>Check to see if the given platform is supported</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>platform</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The platform to check</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the applet supports the platform, otherwise False.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet.show_help">
+<span class="sig-name descname"><span class="pre">show_help</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#squishy.applets.SquishyApplet.show_help" title="Permalink to this definition"></a></dt>
+<dd><p>Shows applets built-in help</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet.init_gui">
+<span class="sig-name descname"><span class="pre">init_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">main_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.applets.SquishyApplet.init_gui" title="Permalink to this definition"></a></dt>
+<dd><p>Initializes applet GUI component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>main_window</strong> (<em>squishy.gui.MainWindow</em>) – The main GUI window.</p></li>
+<li><p><strong>args</strong> (<em>argsparse.Namespace</em>) – Any command line arguments passed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet.init_repl">
+<span class="sig-name descname"><span class="pre">init_repl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repl_ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.applets.SquishyApplet.init_repl" title="Permalink to this definition"></a></dt>
+<dd><p>Initializes applet REPL component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>repl_ctx</strong> (<em>None</em>) – The REPL context</p></li>
+<li><p><strong>args</strong> (<em>argsparse.Namespace</em>) – Any command line arguments passed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet.init_applet">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">init_applet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.applets.SquishyApplet.init_applet" title="Permalink to this definition"></a></dt>
+<dd><p>Applet Initialization</p>
+<p>Called to initialize the applet prior to
+the applet being built and ran</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<em>argsparse.Namespace</em>) – Any command line arguments passed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the was initialized, otherwise False.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)">bool</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.10)"><strong>NotImplementedError</strong></a> – The abstract method must be implemented by the applet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet.register_args">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.applets.SquishyApplet.register_args" title="Permalink to this definition"></a></dt>
+<dd><p>Applet argument registration</p>
+<p>Called to register any applet specific arguments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parser</strong> (<a class="reference external" href="https://docs.python.org/3/library/argparse.html#argparse.ArgumentParser" title="(in Python v3.10)"><em>argparse.ArgumentParser</em></a>) – The root argparse parser.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.10)"><strong>NotImplementedError</strong></a> – The abstract method must be implemented by the applet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet.build">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interfaces</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.applets.SquishyApplet.build" title="Permalink to this definition"></a></dt>
+<dd><p>Applet build step</p>
+<p>Called to build the gateware for the applet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>interfaces</strong> (<em>squishy.gateware.Meta</em>) – The gateware meta object for interfacing with the rest of the gateware.</p></li>
+<li><p><strong>platform</strong> (<em>amaranth.build.plat.TemplatedPlatform</em>) – The hardware platform being used for synthesis.</p></li>
+<li><p><strong>args</strong> (<em>argsparse.Namespace</em>) – Any command line arguments passed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Either a complete elaboratable or a Module.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Union[amaranth.Elaboratable, amaranth.Module]</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.10)"><strong>NotImplementedError</strong></a> – The abstract method must be implemented by the applet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet.run">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.applets.SquishyApplet.run" title="Permalink to this definition"></a></dt>
+<dd><p>Applet run step</p>
+<p>Called to run any specialized machinery for the applet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device</strong> – TBD</p></li>
+<li><p><strong>args</strong> – Any command line arguments passed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>0 if run was successful, otherwise an error code.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.10)"><strong>NotImplementedError</strong></a> – The abstract method must be implemented by the applet</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Squishy Applets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="taperipper.html" class="btn btn-neutral float-right" title="Taperipper Applet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="taperipper.html" class="btn btn-neutral float-left" title="Taperipper Applet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../tutorials/index.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
