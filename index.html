@@ -35,7 +35,7 @@
             <a href="#" class="icon icon-home"> Squishy
           </a>
               <div class="version">
-                0.1.dev1+g0790835
+                0.1.dev1+g1248043
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -210,6 +210,41 @@
 <p>It is comprised of a <a class="reference internal" href="library/gateware/index.html"><span class="doc std std-doc">gateware</span></a> and <a class="reference internal" href="library/python/index.html"><span class="doc std std-doc">python</span></a> library as well as a <a class="reference internal" href="hardware.html"><span class="doc std std-doc">hardware</span></a> platform that acts as a bridge between the software and SCSI bus. Squishy allows for powerful and flexible control over all things SCSI, and using its <a class="reference internal" href="applets/index.html"><span class="doc std std-doc">powerful applet system</span></a> it gives that power to you.</p>
 <p>For a more detailed introduction to Squishy and it’s components, see the <a class="reference internal" href="introduction.html"><span class="doc std std-doc">Introduction</span></a> section of the documentation. Then, when you’re ready visit the <a class="reference internal" href="getting_started.html"><span class="doc std std-doc">Getting Started</span></a> section to get up an running.</p>
 <p>Squishy is entirely open source, and under permissive licenses. The full source code, gateware, firmware, and hardware designs are available on <a class="reference external" href="https://github.com/lethalbit/squishy">GitHub</a>.</p>
+</section>
+<section id="comparison">
+<h2>Comparison<a class="headerlink" href="#comparison" title="Permalink to this headline"></a></h2>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p><a class="reference external" href="https://scsi.moe">Squishy</a></p></th>
+<th class="head"><p><a class="reference external" href="https://scsi.blue/">BlueSCSI</a></p></th>
+<th class="head"><p><a class="reference external" href="https://www.codesrc.com/mediawiki/index.php/SCSI2SD">SCSI2SD</a></p></th>
+<th class="head"><p><a class="reference external" href="https://github.com/akuker/RASCSI">RaSCSI</a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Has a cute mascot</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>Standalone</p></td>
+<td><p>No<sup>†</sup></p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>Cost</p></td>
+<td><p>?</p></td>
+<td><p>~50USD</p></td>
+<td><p>~98USD</p></td>
+<td><p>~45USD<sup>‡</sup></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong><sup>†</sup>:</strong> Squishy requires USB power for operation, therefore it is considered to always be tethered.</p>
+<p><strong><sup>‡</sup>:</strong> This includes only the RaSCSI interface itself, and not the needed RaspberryPi SOM as well.</p>
 </section>
 </section>
 
