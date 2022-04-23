@@ -24,7 +24,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Custom Applets" href="tutorials/applets/index.html" /> 
+    <link rel="prev" title="GUI" href="gui.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -35,7 +35,7 @@
             <a href="index.html" class="icon icon-home"> Squishy
           </a>
               <div class="version">
-                0.1.dev1+g9c7930a
+                0.1.dev1+g12342e5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -61,6 +61,12 @@
 <li class="toctree-l2"><a class="reference internal" href="install.html#installing-squishy">Installing Squishy</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#connecting-the-hardware">Connecting the Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#using-the-cli">Using the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#using-the-gui">Using the GUI</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="hardware.html#revision-0">Revision 0</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="hardware.html#capabilities">Capabilities</a></li>
@@ -81,6 +87,30 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="applets/index.html">Squishy Applets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="applets/analyzer.html">Analyzer Applet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="applets/taperipper.html">Taperipper Applet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="applets/api/index.html">Applet API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="applets/api/cli.html">Squishy Applet: CLI API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="applets/api/gui.html">Squishy Applet: GUI API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="applets/api/repl.html">Squishy Applet: REPL API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="applets/api/applet.html"><code class="docutils literal notranslate"><span class="pre">squishy.applets.SquishyApplet</span></code></a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="applets/api/device.html"><code class="docutils literal notranslate"><span class="pre">squishy.core.device.SquishyHardwareDevice</span></code></a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="applets/api/index.html#applet-search-locations">Applet Search Locations</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="library/index.html">Squishy as a Library</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="library/gateware/index.html">Gateware Library</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="library/gateware/core/index.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.core</span></code></a><ul>
@@ -95,6 +125,8 @@
 <li class="toctree-l3"><a class="reference internal" href="library/gateware/platform/index.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="library/gateware/platform/rev1.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform.rev1</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="library/gateware/platform/rev2.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform.rev2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/gateware/platform/mixins.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform.mixins</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/gateware/platform/resources.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform.resources</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="library/gateware/scsi/index.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi</span></code></a><ul>
@@ -126,28 +158,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#connecting-the-hardware">Connecting the Hardware</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#using-the-cli">Using the CLI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#using-the-gui">Using the GUI</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#invocation">Invocation</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gui.html#invocation">Invocation</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="applets/index.html">Squishy Applets</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="applets/analyzer.html">Analyzer Applet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="applets/taperipper.html">Taperipper Applet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="applets/api.html">Applet API</a><ul class="simple">
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/applets/index.html">Custom Applets</a><ul class="simple">
 </ul>
@@ -157,6 +167,14 @@
 <li class="toctree-l2"><a class="reference internal" href="tutorials/index.html#applets">Applets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/index.html#gateware-library">Gateware Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/index.html#python-library">Python Library</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#invocation">Invocation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gui.html#invocation">Invocation</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Mascot - Sachi</a><ul>
@@ -219,7 +237,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="tutorials/applets/index.html" class="btn btn-neutral float-left" title="Custom Applets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gui.html" class="btn btn-neutral float-left" title="GUI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

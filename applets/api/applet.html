@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>squishy.applets.SquishyApplet &mdash; Squishy 0.1.dev1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/styles.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinx_construct.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/platformpicker.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/styles.css" type="text/css" />
+    <link rel="canonical" href="https://docs.scsi.moe/applets/api/applet.html" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/platformpicker.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="squishy.core.device.SquishyHardwareDevice" href="device.html" />
+    <link rel="prev" title="Squishy Applet: REPL API" href="repl.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Squishy
+          </a>
+              <div class="version">
+                0.1.dev1+g12342e5
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html#gateware">Gateware</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../install.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install.html#installing-prerequisites">Installing Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install.html#installing-dependencies-normal-usage">Installing Dependencies (Normal Usage)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install.html#installing-dependencies-gui-optional">Installing Dependencies (GUI - Optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install.html#installing-dependencies-firmware-build-optional">Installing Dependencies (Firmware Build - Optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install.html#installing-squishy">Installing Squishy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started.html#connecting-the-hardware">Connecting the Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started.html#using-the-cli">Using the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started.html#using-the-gui">Using the GUI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware.html#revision-0">Revision 0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware.html#capabilities">Capabilities</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware.html#revision-1">Revision 1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware.html#id1">Capabilities</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware.html#revision-2">Revision 2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware.html#id2">Capabilities</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware.html#getting-squishy-hardware">Getting Squishy Hardware</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware.html#buying-hardware">Buying Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../hardware.html#building-hardware">Building Hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Squishy Applets</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../analyzer.html">Analyzer Applet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../taperipper.html">Taperipper Applet</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Applet API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cli.html">Squishy Applet: CLI API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gui.html">Squishy Applet: GUI API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="repl.html">Squishy Applet: REPL API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">squishy.applets.SquishyApplet</span></code></a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="device.html"><code class="docutils literal notranslate"><span class="pre">squishy.core.device.SquishyHardwareDevice</span></code></a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#applet-search-locations">Applet Search Locations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../library/index.html">Squishy as a Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../library/gateware/index.html">Gateware Library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../library/gateware/core/index.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.core</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../library/gateware/core/multiboot.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.core.multiboot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/gateware/core/pll.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.core.pll</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/gateware/core/scsi.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.core.scsi</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/gateware/core/spi.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.core.spi</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/gateware/core/uart.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.core.uart</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/gateware/core/usb.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.core.usb</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../library/gateware/platform/index.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../library/gateware/platform/rev1.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform.rev1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/gateware/platform/rev2.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform.rev2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/gateware/platform/mixins.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform.mixins</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/gateware/platform/resources.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform.resources</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../library/gateware/scsi/index.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../library/gateware/scsi/common.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi.common</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/gateware/scsi/device.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi.device</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/gateware/scsi/initiator.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi.initiator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/gateware/scsi/scsi1.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi.scsi1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/gateware/scsi/scsi2.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi.scsi2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/gateware/scsi/scsi3.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi.scsi3</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../library/python/index.html">Python Library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../library/python/commands/index.html"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../library/python/commands/common.html"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands.common</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/python/commands/direct.html"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/python/commands/printer.html"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands.printer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/python/commands/processor.html"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands.processor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/python/commands/ro_direct.html"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands.ro_direct</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/python/commands/sequential.html"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands.sequential</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../library/python/commands/worm.html"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands.worm</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../library/python/messages.html"><code class="docutils literal notranslate"><span class="pre">squishy.scsi.messages</span></code></a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/applets/index.html">Custom Applets</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/index.html#hardware-usage">Hardware Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/index.html#software-usage">Software Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/index.html#applets">Applets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/index.html#gateware-library">Gateware Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/index.html#python-library">Python Library</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli.html">CLI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cli.html#invocation">Invocation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gui.html">GUI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../gui.html#invocation">Invocation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../mascot.html">Mascot - Sachi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../mascot.html#about">About</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mascot.html#images">Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mascot.html#license">License</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Squishy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Squishy Applets</a> &raquo;</li>
+          <li><a href="index.html">Applet API</a> &raquo;</li>
+      <li><code class="docutils literal notranslate"><span class="pre">squishy.applets.SquishyApplet</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="squishy-applets-squishyapplet">
+<h1><code class="docutils literal notranslate"><span class="pre">squishy.applets.SquishyApplet</span></code><a class="headerlink" href="#squishy-applets-squishyapplet" title="Permalink to this headline"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Flesh this out</p>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">squishy.applets.</span></span><span class="sig-name descname"><span class="pre">SquishyApplet</span></span><a class="headerlink" href="#squishy.applets.SquishyApplet" title="Permalink to this definition"></a></dt>
+<dd><p>Squishy applet base class</p>
+<p>This is the abstract base class that is used
+to implement any possible applet for squishy.</p>
+<p>It represents a combination of client-side python,
+and gateware that will run the the hardware platform.</p>
+<p>Users can then invoke the build and execution of implemented
+applets by name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>preview</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – If the applet is a preview/pre-release applet.</p></li>
+<li><p><strong>pretty_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – A pretty string name of the applet.</p></li>
+<li><p><strong>short_help</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – A short section of help for the applet.</p></li>
+<li><p><strong>help</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – A longer more detailed help string.</p></li>
+<li><p><strong>description</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – A brief description about the applet.</p></li>
+<li><p><strong>hardware_rev</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – A single string, or a tuple of strings for supported hardware revisions</p></li>
+<li><p><strong>supports_gui</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Indicates if the applet has a GUI mode.</p></li>
+<li><p><strong>supports_repl</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Indicates if the applet has a REPL mode.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet.supported_platform">
+<span class="sig-name descname"><span class="pre">supported_platform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">platform</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.applets.SquishyApplet.supported_platform" title="Permalink to this definition"></a></dt>
+<dd><p>Check to see if the given platform is supported</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>platform</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The platform to check</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the applet supports the platform, otherwise False.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet.show_help">
+<span class="sig-name descname"><span class="pre">show_help</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#squishy.applets.SquishyApplet.show_help" title="Permalink to this definition"></a></dt>
+<dd><p>Shows applets built-in help</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet.init_gui">
+<span class="sig-name descname"><span class="pre">init_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">main_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.applets.SquishyApplet.init_gui" title="Permalink to this definition"></a></dt>
+<dd><p>Initializes applet GUI component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>main_window</strong> (<em>squishy.gui.MainWindow</em>) – The main GUI window.</p></li>
+<li><p><strong>args</strong> (<em>argsparse.Namespace</em>) – Any command line arguments passed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet.init_repl">
+<span class="sig-name descname"><span class="pre">init_repl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repl_ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.applets.SquishyApplet.init_repl" title="Permalink to this definition"></a></dt>
+<dd><p>Initializes applet REPL component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>repl_ctx</strong> (<em>None</em>) – The REPL context</p></li>
+<li><p><strong>args</strong> (<em>argsparse.Namespace</em>) – Any command line arguments passed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet.init_applet">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">init_applet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.applets.SquishyApplet.init_applet" title="Permalink to this definition"></a></dt>
+<dd><p>Applet Initialization</p>
+<p>Called to initialize the applet prior to
+the applet being built and ran</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<em>argsparse.Namespace</em>) – Any command line arguments passed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the was initialized, otherwise False.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)">bool</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.10)"><strong>NotImplementedError</strong></a> – The abstract method must be implemented by the applet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet.register_args">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.applets.SquishyApplet.register_args" title="Permalink to this definition"></a></dt>
+<dd><p>Applet argument registration</p>
+<p>Called to register any applet specific arguments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parser</strong> (<a class="reference external" href="https://docs.python.org/3/library/argparse.html#argparse.ArgumentParser" title="(in Python v3.10)"><em>argparse.ArgumentParser</em></a>) – The root argparse parser.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.10)"><strong>NotImplementedError</strong></a> – The abstract method must be implemented by the applet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet.build">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interfaces</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.applets.SquishyApplet.build" title="Permalink to this definition"></a></dt>
+<dd><p>Applet build step</p>
+<p>Called to build the gateware for the applet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>interfaces</strong> (<em>squishy.gateware.Meta</em>) – The gateware meta object for interfacing with the rest of the gateware.</p></li>
+<li><p><strong>platform</strong> (<em>amaranth.build.plat.TemplatedPlatform</em>) – The hardware platform being used for synthesis.</p></li>
+<li><p><strong>args</strong> (<em>argsparse.Namespace</em>) – Any command line arguments passed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Either a complete elaboratable or a Module.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Union[amaranth.Elaboratable, amaranth.Module]</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.10)"><strong>NotImplementedError</strong></a> – The abstract method must be implemented by the applet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.applets.SquishyApplet.run">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.applets.SquishyApplet.run" title="Permalink to this definition"></a></dt>
+<dd><p>Applet run step</p>
+<p>Called to run any specialized machinery for the applet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device</strong> – TBD</p></li>
+<li><p><strong>args</strong> – Any command line arguments passed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>0 if run was successful, otherwise an error code.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.10)"><strong>NotImplementedError</strong></a> – The abstract method must be implemented by the applet</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="repl.html" class="btn btn-neutral float-left" title="Squishy Applet: REPL API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="device.html" class="btn btn-neutral float-right" title="squishy.core.device.SquishyHardwareDevice" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Aki &#34;lethalbit&#34; Van Ness, et. al..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

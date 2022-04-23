@@ -33,7 +33,7 @@
             <a href="index.html" class="icon icon-home"> Squishy
           </a>
               <div class="version">
-                0.1.dev1+g9c7930a
+                0.1.dev1+g12342e5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -59,6 +59,12 @@
 <li class="toctree-l2"><a class="reference internal" href="install.html#installing-squishy">Installing Squishy</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#connecting-the-hardware">Connecting the Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#using-the-cli">Using the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#using-the-gui">Using the GUI</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="hardware.html#revision-0">Revision 0</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="hardware.html#capabilities">Capabilities</a></li>
@@ -79,6 +85,30 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="applets/index.html">Squishy Applets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="applets/analyzer.html">Analyzer Applet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="applets/taperipper.html">Taperipper Applet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="applets/api/index.html">Applet API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="applets/api/cli.html">Squishy Applet: CLI API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="applets/api/gui.html">Squishy Applet: GUI API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="applets/api/repl.html">Squishy Applet: REPL API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="applets/api/applet.html"><code class="docutils literal notranslate"><span class="pre">squishy.applets.SquishyApplet</span></code></a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="applets/api/device.html"><code class="docutils literal notranslate"><span class="pre">squishy.core.device.SquishyHardwareDevice</span></code></a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="applets/api/index.html#applet-search-locations">Applet Search Locations</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="library/index.html">Squishy as a Library</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="library/gateware/index.html">Gateware Library</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="library/gateware/core/index.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.core</span></code></a><ul>
@@ -93,6 +123,8 @@
 <li class="toctree-l3"><a class="reference internal" href="library/gateware/platform/index.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="library/gateware/platform/rev1.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform.rev1</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="library/gateware/platform/rev2.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform.rev2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/gateware/platform/mixins.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform.mixins</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="library/gateware/platform/resources.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform.resources</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="library/gateware/scsi/index.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi</span></code></a><ul>
@@ -124,28 +156,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#connecting-the-hardware">Connecting the Hardware</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#using-the-cli">Using the CLI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#using-the-gui">Using the GUI</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#invocation">Invocation</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gui.html#invocation">Invocation</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="applets/index.html">Squishy Applets</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="applets/analyzer.html">Analyzer Applet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="applets/taperipper.html">Taperipper Applet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="applets/api.html">Applet API</a><ul class="simple">
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/applets/index.html">Custom Applets</a><ul class="simple">
 </ul>
@@ -155,6 +165,14 @@
 <li class="toctree-l2"><a class="reference internal" href="tutorials/index.html#applets">Applets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/index.html#gateware-library">Gateware Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/index.html#python-library">Python Library</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#invocation">Invocation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gui.html#invocation">Invocation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mascot.html">Mascot - Sachi</a><ul>
@@ -207,6 +225,7 @@
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
  | <a href="#V"><strong>V</strong></a>
  | <a href="#W"><strong>W</strong></a>
  
@@ -226,7 +245,7 @@
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="applets/api.html#squishy.applets.SquishyApplet.build">build() (squishy.applets.SquishyApplet method)</a>
+      <li><a href="applets/api/applet.html#squishy.applets.SquishyApplet.build">build() (squishy.applets.SquishyApplet method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -240,12 +259,18 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.CMD_COMPLETE">CMD_COMPLETE (squishy.scsi.messages.MessageCodes attribute)</a>
+      <li><a href="library/gateware/platform/rev1.html#squishy.gateware.platform.rev1.SquishyRev1.clock_domain_generator">clock_domain_generator (squishy.gateware.platform.rev1.SquishyRev1 attribute)</a>
+
+      <ul>
+        <li><a href="library/gateware/platform/rev2.html#squishy.gateware.platform.rev2.SquishyRev2.clock_domain_generator">(squishy.gateware.platform.rev2.SquishyRev2 attribute)</a>
 </li>
-      <li><a href="library/python/commands/index.html#squishy.scsi.commands.command">command (in module squishy.scsi.commands)</a>
+      </ul></li>
+      <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.CMD_COMPLETE">CMD_COMPLETE (squishy.scsi.messages.MessageCodes attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/python/commands/index.html#squishy.scsi.commands.command">command (in module squishy.scsi.commands)</a>
+</li>
       <li><a href="library/python/commands/common.html#squishy.scsi.commands.common.compare">compare (in module squishy.scsi.commands.common)</a>
 </li>
       <li><a href="library/python/commands/common.html#squishy.scsi.commands.common.copy">copy (in module squishy.scsi.commands.common)</a>
@@ -258,6 +283,16 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/gateware/scsi/scsi1.html#squishy.gateware.scsi.scsi1.Device">Device() (in module squishy.gateware.scsi.scsi1)</a>
+
+      <ul>
+        <li><a href="library/gateware/scsi/scsi2.html#squishy.gateware.scsi.scsi2.Device">(in module squishy.gateware.scsi.scsi2)</a>
+</li>
+        <li><a href="library/gateware/scsi/scsi3.html#squishy.gateware.scsi.scsi3.Device">(in module squishy.gateware.scsi.scsi3)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.DISCONNECT">DISCONNECT (squishy.scsi.messages.MessageCodes attribute)</a>
 </li>
   </ul></td>
@@ -266,6 +301,8 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/gateware/core/pll.html#squishy.gateware.core.pll.ECP5ClockDomainGenerator">ECP5ClockDomainGenerator (class in squishy.gateware.core.pll)</a>
+</li>
       <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.release.Release.Extent">Extent (squishy.scsi.commands.direct.squishy.scsi.commands.direct.release.Release attribute)</a>
 
       <ul>
@@ -306,18 +343,30 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/gateware/core/pll.html#squishy.gateware.core.pll.ICE40ClockDomainGenerator">ICE40ClockDomainGenerator (class in squishy.gateware.core.pll)</a>
+</li>
+      <li><a href="library/gateware/core/multiboot.html#squishy.gateware.core.multiboot.iCE40Warmboot">iCE40Warmboot (class in squishy.gateware.core.multiboot)</a>
+</li>
       <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.IDENTIFY_END">IDENTIFY_END (squishy.scsi.messages.MessageCodes attribute)</a>
 </li>
       <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.IDENTIFY_START">IDENTIFY_START (squishy.scsi.messages.MessageCodes attribute)</a>
 </li>
-      <li><a href="applets/api.html#squishy.applets.SquishyApplet.init_applet">init_applet() (squishy.applets.SquishyApplet method)</a>
+      <li><a href="applets/api/applet.html#squishy.applets.SquishyApplet.init_applet">init_applet() (squishy.applets.SquishyApplet method)</a>
+</li>
+      <li><a href="applets/api/applet.html#squishy.applets.SquishyApplet.init_gui">init_gui() (squishy.applets.SquishyApplet method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="applets/api.html#squishy.applets.SquishyApplet.init_gui">init_gui() (squishy.applets.SquishyApplet method)</a>
+      <li><a href="applets/api/applet.html#squishy.applets.SquishyApplet.init_repl">init_repl() (squishy.applets.SquishyApplet method)</a>
 </li>
-      <li><a href="applets/api.html#squishy.applets.SquishyApplet.init_repl">init_repl() (squishy.applets.SquishyApplet method)</a>
+      <li><a href="library/gateware/scsi/scsi1.html#squishy.gateware.scsi.scsi1.Initiator">Initiator() (in module squishy.gateware.scsi.scsi1)</a>
+
+      <ul>
+        <li><a href="library/gateware/scsi/scsi2.html#squishy.gateware.scsi.scsi2.Initiator">(in module squishy.gateware.scsi.scsi2)</a>
 </li>
+        <li><a href="library/gateware/scsi/scsi3.html#squishy.gateware.scsi.scsi3.Initiator">(in module squishy.gateware.scsi.scsi3)</a>
+</li>
+      </ul></li>
       <li><a href="library/python/commands/common.html#squishy.scsi.commands.common.inquiry">inquiry (in module squishy.scsi.commands.common)</a>
 </li>
       <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.INT_DETECT_ERR">INT_DETECT_ERR (squishy.scsi.messages.MessageCodes attribute)</a>
@@ -377,6 +426,10 @@
         <li><a href="library/gateware/core/uart.html#module-squishy.gateware.core.uart">squishy.gateware.core.uart</a>
 </li>
         <li><a href="library/gateware/core/usb.html#module-squishy.gateware.core.usb">squishy.gateware.core.usb</a>
+</li>
+        <li><a href="library/gateware/platform/mixins.html#module-squishy.gateware.platform.mixins">squishy.gateware.platform.mixins</a>
+</li>
+        <li><a href="library/gateware/platform/resources.html#module-squishy.gateware.platform.resources.scsi">squishy.gateware.platform.resources.scsi</a>
 </li>
         <li><a href="library/gateware/platform/rev1.html#module-squishy.gateware.platform.rev1">squishy.gateware.platform.rev1</a>
 </li>
@@ -457,7 +510,7 @@
 </li>
       <li><a href="library/python/commands/common.html#squishy.scsi.commands.common.receive_diagnostic_results">receive_diagnostic_results (in module squishy.scsi.commands.common)</a>
 </li>
-      <li><a href="applets/api.html#squishy.applets.SquishyApplet.register_args">register_args() (squishy.applets.SquishyApplet method)</a>
+      <li><a href="applets/api/applet.html#squishy.applets.SquishyApplet.register_args">register_args() (squishy.applets.SquishyApplet method)</a>
 </li>
       <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.verify.Verify.RelativeAddr">RelativeAddr (squishy.scsi.commands.direct.squishy.scsi.commands.direct.verify.Verify attribute)</a>
 </li>
@@ -495,7 +548,7 @@
 </li>
       <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.rezero_unit">rezero_unit (in module squishy.scsi.commands.direct)</a>
 </li>
-      <li><a href="applets/api.html#squishy.applets.SquishyApplet.run">run() (squishy.applets.SquishyApplet method)</a>
+      <li><a href="applets/api/applet.html#squishy.applets.SquishyApplet.run">run() (squishy.applets.SquishyApplet method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -505,6 +558,34 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.SAV_DATA_PTR">SAV_DATA_PTR (squishy.scsi.messages.MessageCodes attribute)</a>
 </li>
+      <li><a href="library/gateware/scsi/scsi1.html#squishy.gateware.scsi.scsi1.SCSI1">SCSI1 (class in squishy.gateware.scsi.scsi1)</a>
+</li>
+      <li><a href="library/gateware/scsi/device.html#squishy.gateware.scsi.device.SCSI1Device">SCSI1Device() (in module squishy.gateware.scsi.device)</a>
+</li>
+      <li><a href="library/gateware/scsi/initiator.html#squishy.gateware.scsi.initiator.SCSI1Initiator">SCSI1Initiator() (in module squishy.gateware.scsi.initiator)</a>
+</li>
+      <li><a href="library/gateware/scsi/scsi2.html#squishy.gateware.scsi.scsi2.SCSI2">SCSI2 (class in squishy.gateware.scsi.scsi2)</a>
+</li>
+      <li><a href="library/gateware/scsi/device.html#squishy.gateware.scsi.device.SCSI2Device">SCSI2Device() (in module squishy.gateware.scsi.device)</a>
+</li>
+      <li><a href="library/gateware/scsi/initiator.html#squishy.gateware.scsi.initiator.SCSI2Initiator">SCSI2Initiator() (in module squishy.gateware.scsi.initiator)</a>
+</li>
+      <li><a href="library/gateware/scsi/scsi3.html#squishy.gateware.scsi.scsi3.SCSI3">SCSI3 (class in squishy.gateware.scsi.scsi3)</a>
+</li>
+      <li><a href="library/gateware/scsi/device.html#squishy.gateware.scsi.device.SCSI3Device">SCSI3Device() (in module squishy.gateware.scsi.device)</a>
+</li>
+      <li><a href="library/gateware/scsi/initiator.html#squishy.gateware.scsi.initiator.SCSI3Initiator">SCSI3Initiator() (in module squishy.gateware.scsi.initiator)</a>
+</li>
+      <li><a href="library/gateware/platform/resources.html#squishy.gateware.platform.resources.scsi.SCSIConnectorResource">SCSIConnectorResource() (in module squishy.gateware.platform.resources.scsi)</a>
+</li>
+      <li><a href="library/gateware/platform/resources.html#squishy.gateware.platform.resources.scsi.SCSIDifferentialResource">SCSIDifferentialResource() (in module squishy.gateware.platform.resources.scsi)</a>
+</li>
+      <li><a href="library/gateware/core/scsi.html#squishy.gateware.core.scsi.SCSIInterface">SCSIInterface (class in squishy.gateware.core.scsi)</a>
+</li>
+      <li><a href="library/gateware/platform/resources.html#squishy.gateware.platform.resources.scsi.SCSIPhyResource">SCSIPhyResource() (in module squishy.gateware.platform.resources.scsi)</a>
+</li>
+      <li><a href="library/gateware/platform/resources.html#squishy.gateware.platform.resources.scsi.SCSISingleEndedResource">SCSISingleEndedResource() (in module squishy.gateware.platform.resources.scsi)</a>
+</li>
       <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.search_data">search_data (in module squishy.scsi.commands.direct)</a>
 </li>
       <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.seek">seek (in module squishy.scsi.commands.direct)</a>
@@ -513,9 +594,11 @@
 </li>
       <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.set_limits">set_limits (in module squishy.scsi.commands.direct)</a>
 </li>
-      <li><a href="applets/api.html#squishy.applets.SquishyApplet.show_help">show_help() (squishy.applets.SquishyApplet method)</a>
+      <li><a href="applets/api/applet.html#squishy.applets.SquishyApplet.show_help">show_help() (squishy.applets.SquishyApplet method)</a>
 </li>
       <li><a href="library/python/commands/printer.html#squishy.scsi.commands.printer.slew_and_print">slew_and_print (in module squishy.scsi.commands.printer)</a>
+</li>
+      <li><a href="library/gateware/core/spi.html#squishy.gateware.core.spi.SPIInterface">SPIInterface (class in squishy.gateware.core.spi)</a>
 </li>
       <li>
     squishy.gateware.core.multiboot
@@ -560,12 +643,28 @@
 </li>
       </ul></li>
       <li>
+    squishy.gateware.platform.mixins
+
+      <ul>
+        <li><a href="library/gateware/platform/mixins.html#module-squishy.gateware.platform.mixins">module</a>
+</li>
+      </ul></li>
+      <li>
+    squishy.gateware.platform.resources.scsi
+
+      <ul>
+        <li><a href="library/gateware/platform/resources.html#module-squishy.gateware.platform.resources.scsi">module</a>
+</li>
+      </ul></li>
+      <li>
     squishy.gateware.platform.rev1
 
       <ul>
         <li><a href="library/gateware/platform/rev1.html#module-squishy.gateware.platform.rev1">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     squishy.gateware.platform.rev2
 
@@ -594,8 +693,6 @@
         <li><a href="library/gateware/scsi/initiator.html#module-squishy.gateware.scsi.initiator">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     squishy.gateware.scsi.scsi1
 
@@ -680,7 +777,13 @@
         <li><a href="library/python/messages.html#module-squishy.scsi.messages">module</a>
 </li>
       </ul></li>
-      <li><a href="applets/api.html#squishy.applets.SquishyApplet">SquishyApplet (class in squishy.applets)</a>
+      <li><a href="applets/api/applet.html#squishy.applets.SquishyApplet">SquishyApplet (class in squishy.applets)</a>
+</li>
+      <li><a href="library/gateware/platform/mixins.html#squishy.gateware.platform.mixins.SquishyCacheMixin">SquishyCacheMixin (class in squishy.gateware.platform.mixins)</a>
+</li>
+      <li><a href="applets/api/device.html#squishy.core.device.SquishyHardwareDevice">SquishyHardwareDevice (class in squishy.core.device)</a>
+</li>
+      <li><a href="library/gateware/platform/mixins.html#squishy.gateware.platform.mixins.SquishyProgramMixin">SquishyProgramMixin (class in squishy.gateware.platform.mixins)</a>
 </li>
       <li><a href="library/gateware/platform/rev1.html#squishy.gateware.platform.rev1.SquishyRev1">SquishyRev1 (class in squishy.gateware.platform.rev1)</a>
 </li>
@@ -688,7 +791,7 @@
 </li>
       <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.start_stop_unit">start_stop_unit (in module squishy.scsi.commands.direct)</a>
 </li>
-      <li><a href="applets/api.html#squishy.applets.SquishyApplet.supported_platform">supported_platform() (squishy.applets.SquishyApplet method)</a>
+      <li><a href="applets/api/applet.html#squishy.applets.SquishyApplet.supported_platform">supported_platform() (squishy.applets.SquishyApplet method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -712,6 +815,18 @@
         <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.reserve.Reserve.ThirdPartyDID">(squishy.scsi.commands.direct.squishy.scsi.commands.direct.reserve.Reserve attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/gateware/core/uart.html#squishy.gateware.core.uart.UARTInterface">UARTInterface (class in squishy.gateware.core.uart)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/gateware/core/usb.html#squishy.gateware.core.usb.USBInterface">USBInterface (class in squishy.gateware.core.usb)</a>
+</li>
   </ul></td>
 </tr></table>
 
