@@ -21,8 +21,12 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/platformpicker.js"></script>
+        <script src="../../_static/wavedrom.skin.js"></script>
+        <script src="../../_static/wavedrom.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
         <script src="../../_static/js/mermaid.min.js"></script>
+        <script src="../../_static/js/wavedrom.min.js"></script>
+        <script src="../../_static/js/wavedrom.skin.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -38,7 +42,7 @@
             <a href="../../index.html" class="icon icon-home"> Squishy
           </a>
               <div class="version">
-                0.1.dev1+g8a8490f
+                0.1.dev1+g7aaa6e2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -225,6 +229,12 @@
 <p>The Squishy gateware library is broken into three main parts. The first is the <a class="reference internal" href="core/index.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.core</span></code></span></a> module, this contains all of the core infra for squishy. Next is the <a class="reference internal" href="platform/index.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.platform</span></code></span></a> module, this contains the Amaranth platform definitions for various bits of squishy hardware. Finally there is the <a class="reference internal" href="scsi/index.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi</span></code></span></a> module, this is where all of the SCSI machinery is for use in Amaranth HDL projects.</p>
 </section>
 
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
 
            </div>
           </div>

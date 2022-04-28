@@ -21,8 +21,12 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/platformpicker.js"></script>
+        <script src="_static/wavedrom.skin.js"></script>
+        <script src="_static/wavedrom.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
         <script src="_static/js/mermaid.min.js"></script>
+        <script src="_static/js/wavedrom.min.js"></script>
+        <script src="_static/js/wavedrom.skin.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -37,7 +41,7 @@
             <a href="#" class="icon icon-home"> Squishy
           </a>
               <div class="version">
-                0.1.dev1+g8a8490f
+                0.1.dev1+g7aaa6e2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -261,13 +265,13 @@
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>No</p></td>
-<td><p>Yes</p></td>
+<td><p>Yes<sup>1</sup></p></td>
 </tr>
 <tr class="row-odd"><td><p>Initiator Emulation</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>No</p></td>
-<td><p>Yes</p></td>
+<td><p>Yes<sup>1</sup></p></td>
 </tr>
 <tr class="row-even"><td><p>Passive Bus Tapping</p></td>
 <td><p>Yes</p></td>
@@ -277,29 +281,79 @@
 </tr>
 <tr class="row-odd"><td><p>Fully Open Source</p></td>
 <td><p>Yes</p></td>
+<td><p>No<sup>2</sup></p></td>
+<td><p>No</p></td>
+<td><p>No<sup>2</sup></p></td>
+</tr>
+<tr class="row-even"><td><p>SCSI-1 Support</p></td>
+<td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>No</p></td>
 <td><p>No</p></td>
 </tr>
-<tr class="row-even"><td><p>Standalone</p></td>
-<td><p>No<sup>†</sup></p></td>
+<tr class="row-odd"><td><p>SCSI-2 Support</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes?</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>SCSI-3 Support</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>HVD Support</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>LVD Support</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>SE Support</p></td>
+<td><p>Yes</p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 </tr>
-<tr class="row-odd"><td><p>Cost</p></td>
+<tr class="row-even"><td><p>Fastest Bus Speed</p></td>
+<td><p>Nyoomie</p></td>
+<td><p>?</p></td>
+<td><p>FAST10</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Standalone</p></td>
+<td><p>No<sup>3</sup></p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>Cost</p></td>
 <td><p>?</p></td>
 <td><p>~50USD</p></td>
 <td><p>~98USD</p></td>
-<td><p>~45USD<sup>‡</sup></p></td>
+<td><p>~45USD<sup>4</sup></p></td>
 </tr>
 </tbody>
 </table>
-<p><strong><sup>†</sup>:</strong> Squishy requires USB power for operation, therefore it is considered to always be tethered.</p>
-<p><strong><sup>‡</sup>:</strong> This includes only the RaSCSI interface itself, and not the needed RaspberryPi SOM as well.</p>
+<p><strong>1:</strong> RaSCSI allows you to write Linux userspace software via an API.</p>
+<p><strong>2:</strong> The adapter board is Open Source, but the main compute element is not.</p>
+<p><strong>3:</strong> Squishy requires USB power for operation, therefore it is considered to always be tethered.</p>
+<p><strong>4:</strong> This includes only the RaSCSI interface itself, and not the needed RaspberryPi SOM as well.</p>
 </section>
 </section>
 
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
 
            </div>
           </div>
