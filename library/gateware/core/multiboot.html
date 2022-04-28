@@ -21,6 +21,8 @@
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/platformpicker.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+        <script src="../../../_static/js/mermaid.min.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -36,7 +38,7 @@
             <a href="../../../index.html" class="icon icon-home"> Squishy
           </a>
               <div class="version">
-                0.1.dev1+g5bfd228
+                0.1.dev1+g8a8490f
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -222,6 +224,8 @@
 <dt class="sig sig-object py" id="squishy.gateware.core.multiboot.iCE40Warmboot">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">squishy.gateware.core.multiboot.</span></span><span class="sig-name descname"><span class="pre">iCE40Warmboot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_loc_at</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.gateware.core.multiboot.iCE40Warmboot" title="Permalink to this definition"></a></dt>
 <dd><p>Wrapper for iCE40 Warmboot block</p>
+<p>This elaboratable instantiates an instance of the <code class="docutils literal notranslate"><span class="pre">SB_WARMBOOT</span></code> resource
+found on iCE40 FPGAs, allowing for alternate bitstrteam loading from gateware.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
