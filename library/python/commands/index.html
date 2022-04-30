@@ -42,7 +42,7 @@
             <a href="../../../index.html" class="icon icon-home"> Squishy
           </a>
               <div class="version">
-                0.1.dev1+g7aaa6e2
+                0.1.dev1+g134f442
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -223,965 +223,915 @@
 <h1><code class="docutils literal notranslate"><span class="pre">squishy.scsi.commands</span></code><a class="headerlink" href="#squishy-scsi-commands" title="Permalink to this headline"></a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<span class="target" id="module-squishy.scsi.commands"></span><p>This modules defines the core SCSI command structure.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.group_code">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">group_code</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Enum</span></em><a class="headerlink" href="#squishy.scsi.commands.group_code" title="Permalink to this definition"></a></dt>
-<dd><p>SCSI Command Group Codes</p>
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.group_code.Command</span> <span class="pre">Group</span> <span class="pre">Code.Group0</span></span></dt>
-<dd></dd></dl>
+<span class="target" id="module-squishy.scsi.command"></span><dl class="py class">
+<dt class="sig sig-object py" id="squishy.scsi.command.DeviceType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">squishy.scsi.command.</span></span><span class="sig-name descname"><span class="pre">DeviceType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.scsi.command.DeviceType" title="Permalink to this definition"></a></dt>
+<dd><p>SCSI Device Type</p>
+</dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="squishy.scsi.command.GroupCode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">squishy.scsi.command.</span></span><span class="sig-name descname"><span class="pre">GroupCode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.scsi.command.GroupCode" title="Permalink to this definition"></a></dt>
+<dd><p>SCSI Command Group Code</p>
+<p>Each SCSI command belongs to a group that defines its characteristics. It
+also defines which commands are optional (<code class="docutils literal notranslate"><span class="pre">o</span></code>), mandatory (<code class="docutils literal notranslate"><span class="pre">m</span></code>),
+reserved (<code class="docutils literal notranslate"><span class="pre">r</span></code>), shared (<code class="docutils literal notranslate"><span class="pre">s</span></code>), or vendor specific (<code class="docutils literal notranslate"><span class="pre">v</span></code>).</p>
+<p>If a command is optional (<code class="docutils literal notranslate"><span class="pre">o</span></code>) then the target does not need to implement it. If the command is
+mandatory (<code class="docutils literal notranslate"><span class="pre">m</span></code>) then it must be implemented by the target. If a command is reserved (<code class="docutils literal notranslate"><span class="pre">r</span></code>) then
+it should not be implemented by the target, if a command is shared (<code class="docutils literal notranslate"><span class="pre">s</span></code>) then the opcode depends on
+the target device class, and may have multiple meanings. Finally, if the command is vendor specific (<code class="docutils literal notranslate"><span class="pre">v</span></code>)
+then the command might be implemented depending on the target vendor and its meaning is not standardized.</p>
+<p>Each group code is three-bits long, allowing for a maximum of eight groups, with the
+remaining five-bits in the command opcode for the command identifier itself.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Groupe Code</p></th>
+<th class="head"><p>Group Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0b000</span></code></p></td>
+<td><p>Six-byte Commands</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0b001</span></code></p></td>
+<td><p>Ten-byte Commands</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0b010</span></code></p></td>
+<td rowspan="3"><p>Reserved Groups</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0b011</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0b100</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0b101</span></code></p></td>
+<td><p>Twelve-byte Commands</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0b110</span></code></p></td>
+<td rowspan="2"><p>Vendor Specific</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0b111</span></code></p></td>
+</tr>
+</tbody>
+</table>
 <dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.group_code.Command</span> <span class="pre">Group</span> <span class="pre">Code.Group1</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.group_code.Command</span> <span class="pre">Group</span> <span class="pre">Code.Group2</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.group_code.Command</span> <span class="pre">Group</span> <span class="pre">Code.Group3</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.group_code.Command</span> <span class="pre">Group</span> <span class="pre">Code.Group4</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.group_code.Command</span> <span class="pre">Group</span> <span class="pre">Code.Group5</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.group_code.Command</span> <span class="pre">Group</span> <span class="pre">Code.Group6</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.group_code.Command</span> <span class="pre">Group</span> <span class="pre">Code.Group7</span></span></dt>
-<dd></dd></dl>
-
+<dt class="sig sig-object py" id="squishy.scsi.command.GroupCode.GROUP0">
+<span class="sig-name descname"><span class="pre">GROUP0</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#squishy.scsi.command.GroupCode.GROUP0" title="Permalink to this definition"></a></dt>
+<dd><p>Six-byte Commands</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 15%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>opcode</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x00</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">o</span></code></p></td>
+<td><p>Test Unit Ready</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0x01</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x02</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0x03</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span></code></p></td>
+<td><p>Request Sense</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x04</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">0x05</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0x06</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x07</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">0x08</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0x09</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x0A</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">0x0B</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0x0C</span></code> to <code class="docutils literal notranslate"><span class="pre">0x0E</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x0F</span></code> to <code class="docutils literal notranslate"><span class="pre">0x11</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0x12</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span></code></p></td>
+<td><p>Inquiry</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x13</span></code> to <code class="docutils literal notranslate"><span class="pre">0x17</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0x18</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">o</span></code></p></td>
+<td><p>Copy</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x19</span></code> to <code class="docutils literal notranslate"><span class="pre">0x`B</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0x1C</span></code></p></td>
+<td rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">o</span></code></p></td>
+<td><p>Recv Diagnostic</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x1D</span></code></p></td>
+<td><p>Send Diagnostic</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0x1E</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x1F</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">r</span></code></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.command">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.</span></span><span class="sig-name descname"><span class="pre">command</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Struct</span></em><a class="headerlink" href="#squishy.scsi.commands.command" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="squishy.scsi.command.GroupCode.GROUP1">
+<span class="sig-name descname"><span class="pre">GROUP1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#squishy.scsi.command.GroupCode.GROUP1" title="Permalink to this definition"></a></dt>
+<dd><p>Ten-byte Commands</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 15%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>opcode</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x00</span></code> to <code class="docutils literal notranslate"><span class="pre">0x04</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0x05</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x06</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">0x07</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0x08</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x09</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0x0A</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">0x0B</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x0C</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">0x0D</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0x0E</span></code> to <code class="docutils literal notranslate"><span class="pre">0x13</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x14</span></code> to <code class="docutils literal notranslate"><span class="pre">0x18</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">r</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0x19</span></code></p></td>
+<td rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">o</span></code></p></td>
+<td><p>Compare</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x1A</span></code></p></td>
+<td><p>Copy and Verify</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0x1B</span></code> to <code class="docutils literal notranslate"><span class="pre">0x1F</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">r</span></code></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="squishy.scsi.command.GroupCode.GROUP2">
+<span class="sig-name descname"><span class="pre">GROUP2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#squishy.scsi.command.GroupCode.GROUP2" title="Permalink to this definition"></a></dt>
+<dd><p>Reserved Group</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 15%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>opcode</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x00</span></code> to <code class="docutils literal notranslate"><span class="pre">0x0F</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">r</span></code></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="squishy.scsi.command.GroupCode.GROUP3">
+<span class="sig-name descname"><span class="pre">GROUP3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#squishy.scsi.command.GroupCode.GROUP3" title="Permalink to this definition"></a></dt>
+<dd><p>Reserved Group</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 15%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>opcode</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x00</span></code> to <code class="docutils literal notranslate"><span class="pre">0x0F</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">r</span></code></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="squishy.scsi.command.GroupCode.GROUP4">
+<span class="sig-name descname"><span class="pre">GROUP4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#squishy.scsi.command.GroupCode.GROUP4" title="Permalink to this definition"></a></dt>
+<dd><p>Reserved Group</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 15%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>opcode</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x00</span></code> to <code class="docutils literal notranslate"><span class="pre">0x0F</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">r</span></code></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="squishy.scsi.command.GroupCode.GROUP5">
+<span class="sig-name descname"><span class="pre">GROUP5</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#squishy.scsi.command.GroupCode.GROUP5" title="Permalink to this definition"></a></dt>
+<dd><p>Twelve-byte Commands</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 15%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>opcode</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x00</span></code> to <code class="docutils literal notranslate"><span class="pre">0x0F</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0x10</span></code> to <code class="docutils literal notranslate"><span class="pre">0x1F</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">r</span></code></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="squishy.scsi.command.GroupCode.GROUP6">
+<span class="sig-name descname"><span class="pre">GROUP6</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#squishy.scsi.command.GroupCode.GROUP6" title="Permalink to this definition"></a></dt>
+<dd><p>Vendor Specific Commands</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 15%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>opcode</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x00</span></code> to <code class="docutils literal notranslate"><span class="pre">0x1F</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v</span></code></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="squishy.scsi.command.GroupCode.GROUP7">
+<span class="sig-name descname"><span class="pre">GROUP7</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#squishy.scsi.command.GroupCode.GROUP7" title="Permalink to this definition"></a></dt>
+<dd><p>Vendor Specific Commands</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 15%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>opcode</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0x00</span></code> to <code class="docutils literal notranslate"><span class="pre">0x1F</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v</span></code></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="squishy.scsi.command.SCSICommand">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">squishy.scsi.command.</span></span><span class="sig-name descname"><span class="pre">SCSICommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#squishy.scsi.command.GroupCode" title="squishy.scsi.command.GroupCode"><span class="pre">squishy.scsi.command.GroupCode</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">opcode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><span class="pre">Optional</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">subcons</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subconskw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.scsi.command.SCSICommand" title="Permalink to this definition"></a></dt>
 <dd><p>SCSI Command Structure</p>
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Opcode</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Opcode.Raw</span></span></dt>
-<dd><p><strong>Endian:</strong> little</p>
-<p><strong>Size:</strong> 1</p>
-<p><strong>Underlying Types:</strong></p>
+<p>Creates a <code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Struct</span></code> for arbitrary SCSI Commands. This wraps the
+structure and gives it some useful common operations needed to consume and generate
+SCSI commands.</p>
+<p>This class automatically creates the opcode and control sections
+of the command and surrounds the provided <code class="docutils literal notranslate"><span class="pre">*subcons</span></code> with them.</p>
+<p>The rough layout of a SCSI command looks like this:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Byte</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td colspan="8"><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">opcode</span></code></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">n</span></code></p></td>
+<td colspan="8"><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">data</span></code></strong></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">n+1</span></code></p></td>
+<td colspan="8"><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">control</span></code></strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>Both the <code class="docutils literal notranslate"><span class="pre">opcode</span></code> and <code class="docutils literal notranslate"><span class="pre">control</span></code> fields of the command
+are fixed size at 8 bits, but the <code class="docutils literal notranslate"><span class="pre">data</span></code> section may
+span multiple bytes and is command dependent.</p>
+<p>The size of the command represents the full size of the structure,
+where the size of the command data itself is <code class="docutils literal notranslate"><span class="pre">sizeof(data)</span> <span class="pre">-</span> <span class="pre">2</span></code>
+to account for the <code class="docutils literal notranslate"><span class="pre">opcode</span></code> and <code class="docutils literal notranslate"><span class="pre">control</span></code> bytes. Therefore a
+Six-byte command has four-bytes of actual command data for example.</p>
+<p>The layout of the <code class="docutils literal notranslate"><span class="pre">opcode</span></code> itself is a ‘sub structure’ which
+describes the group the command is in as well as the command itself.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 14%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>7</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="3"><p><code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">code</span></code></p></td>
+<td colspan="5"><p><code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">code</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">code</span></code> (<a class="reference internal" href="#squishy.scsi.command.GroupCode" title="squishy.scsi.command.GroupCode"><code class="xref py py-class docutils literal notranslate"><span class="pre">GroupCode</span></code></a>) is the top three bits of the opcode, followed by the
+<code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">code</span></code> which is the remaining seven bits.</p>
+<p>Due to the split between <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">code</span></code> and <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">code</span></code> as well as the different classes that implement
+commans, there is a large re-use of <code class="docutils literal notranslate"><span class="pre">opcode</span></code>’s, this complicates things, as we need to know ahead of time what
+the device is in order to succesfully dispatch and parse commands.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">control</span></code> byte also has it’s own ‘sub structure’.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 12%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>7</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="2"><p><code class="docutils literal notranslate"><span class="pre">vendor</span></code></p></td>
+<td colspan="4"><p><code class="docutils literal notranslate"><span class="pre">reserved</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">flag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">link</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">vendor</span></code> field makes up the top two bits of the control byte, and is vendor unique.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">reserved</span></code> field follows and is made up of the next four bits.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">flag</span></code> bit can only be set if the <code class="docutils literal notranslate"><span class="pre">link</span></code> bit is set. If <code class="docutils literal notranslate"><span class="pre">link</span></code> is
+set and the command completes successfully then the target sends a <code class="docutils literal notranslate"><span class="pre">LINKED</span> <span class="pre">COMMAND</span> <span class="pre">COMPLETE</span></code>
+message if <code class="docutils literal notranslate"><span class="pre">flag</span></code> is zero and a <code class="docutils literal notranslate"><span class="pre">LINKED</span> <span class="pre">COMMAND</span> <span class="pre">COMPLETE</span> <span class="pre">WITH</span> <span class="pre">FLAG</span></code> message if <code class="docutils literal notranslate"><span class="pre">flag</span></code> is set.
+This behavior is commonly used to trigger an interrupt in the initiator.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">link</span></code> bit represents an automatic link to the next command is requested by the initiator if the command
+is successful. Implementation of this is optional, and depending on if it is supported or not, one of the following
+two behaviors is expected if the <code class="docutils literal notranslate"><span class="pre">link</span></code> flag is set.</p>
 <blockquote>
-<div><p>Type: int</p>
-<p>Size: 1</p>
-<p>Sign: unsigned</p>
+<div><ul class="simple">
+<li><p>If supported, when a command completes successfully. The target will return
+a <code class="docutils literal notranslate"><span class="pre">INTERMEDIATE</span></code> status and then send a message depending on the state of <code class="docutils literal notranslate"><span class="pre">flag</span></code>.</p></li>
+<li><p>If unsupported, the target will return a <code class="docutils literal notranslate"><span class="pre">CHECK</span> <span class="pre">CONDITION</span></code> status and depending if
+extended sense is implemented, it will set the sense key to <code class="docutils literal notranslate"><span class="pre">ILLEGAL</span> <span class="pre">REQUEST</span></code> if either
+<code class="docutils literal notranslate"><span class="pre">flag</span></code> or <code class="docutils literal notranslate"><span class="pre">link</span></code> are set.</p></li>
+</ul>
 </div></blockquote>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Opcode.Parsed</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Opcode.Parsed.Group</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Opcode.Parsed.Group.Command</span> <span class="pre">Group</span> <span class="pre">Code</span></span></dt>
-<dd><p>See: <a class="reference internal" href="#squishy.scsi.commands.group_code" title="squishy.scsi.commands.group_code"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.group_code</span></code></a></p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Opcode.Parsed.Command</span></span></dt>
-<dd><p>Unsigned 5 bit integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Group0</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.0</span></span></dt>
-<dd><p>See: <a class="reference internal" href="common.html#squishy.scsi.commands.common.test_unit_ready" title="squishy.scsi.commands.common.test_unit_ready"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.common.test_unit_ready</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.1</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Re-Zero</span> <span class="pre">Unit</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.rezero_unit" title="squishy.scsi.commands.direct.rezero_unit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.rezero_unit</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Rewind</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Rewind.LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Rewind.Reserved</span></span></dt>
-<dd><p>Unsigned 4 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Rewind.Immediate</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Rewind.Reserved</span></span></dt>
-<dd><p>Unsigned 3 byte integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.3</span></span></dt>
-<dd><p>See: <a class="reference internal" href="common.html#squishy.scsi.commands.common.request_sense" title="squishy.scsi.commands.common.request_sense"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.common.request_sense</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.4</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Format</span> <span class="pre">Unit</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.format_unit" title="squishy.scsi.commands.direct.format_unit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.format_unit</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Format</span> <span class="pre">(Printer)</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Format</span> <span class="pre">(Printer).LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Format</span> <span class="pre">(Printer).Reserved</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Format</span> <span class="pre">(Printer).Type</span></span></dt>
-<dd><p>Unsigned 2 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Format</span> <span class="pre">(Printer).TxLen</span></span></dt>
-<dd><p>Unsigned 3 byte integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.5</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Read</span> <span class="pre">Block</span> <span class="pre">Limits.LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Read</span> <span class="pre">Block</span> <span class="pre">Limits.Reserved</span></span></dt>
-<dd><p>Unsigned 29 bit integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.7</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.reassign_blocks" title="squishy.scsi.commands.direct.reassign_blocks"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.reassign_blocks</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.8</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Read</span> <span class="pre">(Direct</span> <span class="pre">Access)</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.read" title="squishy.scsi.commands.direct.read"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.read</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Read</span> <span class="pre">(Sequential)</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Read</span> <span class="pre">(Sequential).LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Read</span> <span class="pre">(Sequential).Reserved</span></span></dt>
-<dd><p>Unsigned 4 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Read</span> <span class="pre">(Sequential).Fixed</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Read</span> <span class="pre">(Sequential).TXLen</span></span></dt>
-<dd><p>Unsigned 3 byte integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.10</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Write</span> <span class="pre">(Direct</span> <span class="pre">Access)</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.write" title="squishy.scsi.commands.direct.write"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.write</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Write</span> <span class="pre">(Sequential)</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Write</span> <span class="pre">(Sequential).LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Write</span> <span class="pre">(Sequential).Reserved</span></span></dt>
-<dd><p>Unsigned 4 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Write</span> <span class="pre">(Sequential).Fixed</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Write</span> <span class="pre">(Sequential).TXLen</span></span></dt>
-<dd><p>Unsigned 3 byte integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Print</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Print.LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Print.Reserved</span></span></dt>
-<dd><p>Unsigned 5 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Print.TxLen</span></span></dt>
-<dd><p>Unsigned 3 byte integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.11</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Seek</span> <span class="pre">(Direct</span> <span class="pre">Access)</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.seek" title="squishy.scsi.commands.direct.seek"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.seek</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Track</span> <span class="pre">Select</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Track</span> <span class="pre">Select.LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Track</span> <span class="pre">Select.Reserved</span></span></dt>
-<dd><p>Unsigned 21 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Track</span> <span class="pre">Select.TrackVal</span></span></dt>
-<dd><p><strong>Endian:</strong> little</p>
-<p><strong>Size:</strong> 1</p>
-<p><strong>Underlying Types:</strong></p>
-<blockquote>
-<div><p>Type: int</p>
-<p>Size: 1</p>
-<p>Sign: unsigned</p>
-</div></blockquote>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Slew</span> <span class="pre">and</span> <span class="pre">Print</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Slew</span> <span class="pre">and</span> <span class="pre">Print.LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Slew</span> <span class="pre">and</span> <span class="pre">Print.Reserved</span></span></dt>
-<dd><p>Unsigned 4 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Slew</span> <span class="pre">and</span> <span class="pre">Print.Channel</span></span></dt>
-<dd><p>Unsigned 1 bit integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.15</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Read</span> <span class="pre">Reversed.LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Read</span> <span class="pre">Reversed.Reserved</span></span></dt>
-<dd><p>Unsigned 4 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Read</span> <span class="pre">Reversed.Fixed</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Read</span> <span class="pre">Reversed.TXLen</span></span></dt>
-<dd><p>Unsigned 3 byte integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.16</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Write</span> <span class="pre">Filemarks</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Write</span> <span class="pre">Filemarks.LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Write</span> <span class="pre">Filemarks.Reserved</span></span></dt>
-<dd><p>Unsigned 5 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Write</span> <span class="pre">Filemarks.FilemarkNum</span></span></dt>
-<dd><p>Unsigned 3 byte integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Flush</span> <span class="pre">Buffer</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Flush</span> <span class="pre">Buffer.LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Flush</span> <span class="pre">Buffer.Reserved</span></span></dt>
-<dd><p>Unsigned 28 bit integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.17</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Space.LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Space.Reserved</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Space.Code</span></span></dt>
-<dd><p>Unsigned 2 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Space.Count</span></span></dt>
-<dd><p>Unsigned 3 byte integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.18</span></span></dt>
-<dd><p>See: <a class="reference internal" href="common.html#squishy.scsi.commands.common.inquiry" title="squishy.scsi.commands.common.inquiry"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.common.inquiry</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.19</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Verify</span> <span class="pre">(Sequential).LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Verify</span> <span class="pre">(Sequential).Reserved</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Verify</span> <span class="pre">(Sequential).ByteCmp</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Verify</span> <span class="pre">(Sequential).Fixed</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Verify</span> <span class="pre">(Sequential).VerifyLen</span></span></dt>
-<dd><p>Unsigned 3 byte integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.20</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Recover</span> <span class="pre">Buffered</span> <span class="pre">Date</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Recover</span> <span class="pre">Buffered</span> <span class="pre">Date.LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Recover</span> <span class="pre">Buffered</span> <span class="pre">Date.Reserved</span></span></dt>
-<dd><p>Unsigned 4 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Recover</span> <span class="pre">Buffered</span> <span class="pre">Date.Fixed</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Recover</span> <span class="pre">Buffered</span> <span class="pre">Date.TXLen</span></span></dt>
-<dd><p>Unsigned 3 byte integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.21</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Mode</span> <span class="pre">Select</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.mode_select" title="squishy.scsi.commands.direct.mode_select"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.mode_select</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Mode</span> <span class="pre">Select</span> <span class="pre">(Sequential)</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Mode</span> <span class="pre">Select</span> <span class="pre">(Sequential).LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Mode</span> <span class="pre">Select</span> <span class="pre">(Sequential).Reserved</span></span></dt>
-<dd><p>Unsigned 21 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Mode</span> <span class="pre">Select</span> <span class="pre">(Sequential).ParamLen</span></span></dt>
-<dd><p><strong>Endian:</strong> little</p>
-<p><strong>Size:</strong> 1</p>
-<p><strong>Underlying Types:</strong></p>
-<blockquote>
-<div><p>Type: int</p>
-<p>Size: 1</p>
-<p>Sign: unsigned</p>
-</div></blockquote>
-</dd></dl>
-
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.22</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Reserve</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.reserve" title="squishy.scsi.commands.direct.reserve"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.reserve</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Reserve</span> <span class="pre">Unit</span> <span class="pre">(Sequential)</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Reserve</span> <span class="pre">Unit</span> <span class="pre">(Sequential).LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Reserve</span> <span class="pre">Unit</span> <span class="pre">(Sequential).ThirdParty</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Reserve</span> <span class="pre">Unit</span> <span class="pre">(Sequential).ThirdPartyDID</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Reserve</span> <span class="pre">Unit</span> <span class="pre">(Sequential).Reserved</span></span></dt>
-<dd><p>Unsigned 25 bit integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.23</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Release</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.release" title="squishy.scsi.commands.direct.release"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.release</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Release</span> <span class="pre">Unit</span> <span class="pre">(Sequential)</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Release</span> <span class="pre">Unit</span> <span class="pre">(Sequential).LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Release</span> <span class="pre">Unit</span> <span class="pre">(Sequential).ThirdParty</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Release</span> <span class="pre">Unit</span> <span class="pre">(Sequential).ThirdPartyDID</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Release</span> <span class="pre">Unit</span> <span class="pre">(Sequential).Reserved</span></span></dt>
-<dd><p>Unsigned 25 bit integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.24</span></span></dt>
-<dd><p>See: <a class="reference internal" href="common.html#squishy.scsi.commands.common.copy" title="squishy.scsi.commands.common.copy"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.common.copy</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.25</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Erase</span> <span class="pre">(Sequential).LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Erase</span> <span class="pre">(Sequential).Reserved</span></span></dt>
-<dd><p>Unsigned 4 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Erase</span> <span class="pre">(Sequential).Long</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Erase</span> <span class="pre">(Sequential).Reserved</span></span></dt>
-<dd><p>Unsigned 3 byte integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.26</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Mode</span> <span class="pre">Sense</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.mode_sense" title="squishy.scsi.commands.direct.mode_sense"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.mode_sense</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Mode</span> <span class="pre">Sense</span> <span class="pre">(Sequential)</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Mode</span> <span class="pre">Sense</span> <span class="pre">(Sequential).LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Mode</span> <span class="pre">Sense</span> <span class="pre">(Sequential).Reserved</span></span></dt>
-<dd><p>Unsigned 21 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Mode</span> <span class="pre">Sense</span> <span class="pre">(Sequential).AllocLen</span></span></dt>
-<dd><p><strong>Endian:</strong> little</p>
-<p><strong>Size:</strong> 1</p>
-<p><strong>Underlying Types:</strong></p>
-<blockquote>
-<div><p>Type: int</p>
-<p>Size: 1</p>
-<p>Sign: unsigned</p>
-</div></blockquote>
-</dd></dl>
-
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.27</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Start/Stop</span> <span class="pre">Unit</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.start_stop_unit" title="squishy.scsi.commands.direct.start_stop_unit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.start_stop_unit</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Load/Unload</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Load/Unload.LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Load/Unload.Reserved</span></span></dt>
-<dd><p>Unsigned 4 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Load/Unload.Immediate</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Load/Unload.Reserved</span></span></dt>
-<dd><p>Unsigned 22 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Load/Unload.ReTension</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Load/Unload.Load</span></span></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.28</span></span></dt>
-<dd><p>See: <a class="reference internal" href="common.html#squishy.scsi.commands.common.receive_diagnostic_results" title="squishy.scsi.commands.common.receive_diagnostic_results"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.common.receive_diagnostic_results</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.29</span></span></dt>
-<dd><p>See: <a class="reference internal" href="common.html#squishy.scsi.commands.common.send_diagnostic" title="squishy.scsi.commands.common.send_diagnostic"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.common.send_diagnostic</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.30</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Prevent/Allow</span> <span class="pre">Media</span> <span class="pre">Removal</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.prevent_allow_media_removal" title="squishy.scsi.commands.direct.prevent_allow_media_removal"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.prevent_allow_media_removal</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Prevent/Allow</span> <span class="pre">Media</span> <span class="pre">Removal</span> <span class="pre">(Sequential)</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Prevent/Allow</span> <span class="pre">Media</span> <span class="pre">Removal</span> <span class="pre">(Sequential).LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Prevent/Allow</span> <span class="pre">Media</span> <span class="pre">Removal</span> <span class="pre">(Sequential).Reserved</span></span></dt>
-<dd><p>Unsigned 28 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Six-byte</span> <span class="pre">Command.Prevent/Allow</span> <span class="pre">Media</span> <span class="pre">Removal</span> <span class="pre">(Sequential).Prevent</span></span></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Group1</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Ten-byte</span> <span class="pre">Command.5</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.read_capacity" title="squishy.scsi.commands.direct.read_capacity"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.read_capacity</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Ten-byte</span> <span class="pre">Command.8</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.read" title="squishy.scsi.commands.direct.read"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.read</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Ten-byte</span> <span class="pre">Command.10</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.write" title="squishy.scsi.commands.direct.write"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.write</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Ten-byte</span> <span class="pre">Command.11</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.seek" title="squishy.scsi.commands.direct.seek"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.seek</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Ten-byte</span> <span class="pre">Command.14</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.write_and_verify" title="squishy.scsi.commands.direct.write_and_verify"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.write_and_verify</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Ten-byte</span> <span class="pre">Command.15</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.verify" title="squishy.scsi.commands.direct.verify"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.verify</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Ten-byte</span> <span class="pre">Command.16</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.search_data" title="squishy.scsi.commands.direct.search_data"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.search_data</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Ten-byte</span> <span class="pre">Command.17</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.search_data" title="squishy.scsi.commands.direct.search_data"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.search_data</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Ten-byte</span> <span class="pre">Command.18</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.search_data" title="squishy.scsi.commands.direct.search_data"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.search_data</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Ten-byte</span> <span class="pre">Command.19</span></span></dt>
-<dd><p>See: <a class="reference internal" href="direct.html#squishy.scsi.commands.direct.set_limits" title="squishy.scsi.commands.direct.set_limits"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.direct.set_limits</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Ten-byte</span> <span class="pre">Command.25</span></span></dt>
-<dd><p>See: <a class="reference internal" href="common.html#squishy.scsi.commands.common.compare" title="squishy.scsi.commands.common.compare"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.common.compare</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Ten-byte</span> <span class="pre">Command.26</span></span></dt>
-<dd><p>See: <a class="reference internal" href="common.html#squishy.scsi.commands.common.copy_and_verify" title="squishy.scsi.commands.common.copy_and_verify"><code class="xref py py-attr docutils literal notranslate"><span class="pre">squishy.scsi.commands.common.copy_and_verify</span></code></a></p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Group2</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Group3</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Data.Group4</span></span></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Control</span></span></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Control.Vendor</span></span></dt>
-<dd><p>Unsigned 2 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Control.Reserved</span></span></dt>
-<dd><p>Unsigned 4 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Control.Flag</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.command.SCSI</span> <span class="pre">Command.Control.Link</span></span></dt>
-<dd></dd></dl>
-
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>opcode</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – The operation code (opcode) for the given command.</p></li>
+<li><p><strong>group_code</strong> (<a class="reference internal" href="#squishy.scsi.command.GroupCode" title="squishy.scsi.command.GroupCode"><em>GroupCode</em></a>) – The specific SCSI group code for this command.</p></li>
+<li><p><strong>size</strong> (<em>None</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – The size of the command, if not provided, this is inferred from the <code class="docutils literal notranslate"><span class="pre">group_code</span></code> if possible.</p></li>
+<li><p><strong>*subcons</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>[</em><a class="reference external" href="https://construct.readthedocs.io/en/latest/api/abstract.html#construct.Subconstruct" title="(in Construct v2.10)"><em>construct.Subconstruct</em></a><em>]</em>) – The collection of <a class="reference external" href="https://construct.readthedocs.io/en/latest/index.html">construct</a> <a class="reference external" href="https://construct.readthedocs.io/en/latest/api/abstract.html#construct.Subconstruct" title="(in Construct v2.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Subconstruct</span></code></a>
+members representing the command.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>group_code</strong> (<a class="reference internal" href="#squishy.scsi.command.GroupCode" title="squishy.scsi.command.GroupCode"><em>GroupCode</em></a>) – The SCSI commands group code.</p></li>
+<li><p><strong>size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – The total size of the SCSI command.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.scsi.command.SCSICommand.parse">
+<span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">ctxkw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.scsi.command.SCSICommand.parse" title="Permalink to this definition"></a></dt>
+<dd><p>Parse an in-memory buffer (often bytes object). Strings, buffers, memoryviews, and other complete buffers can be parsed with this method.</p>
+<p>Whenever data cannot be read, ConstructError or its derivative is raised. This method is NOT ALLOWED to raise any other exceptions although (1) user-defined lambdas can raise arbitrary exceptions which are propagated (2) external libraries like numpy can raise arbitrary exceptions which are propagated (3) some list and dict lookups can raise IndexError and KeyError which are propagated.</p>
+<p>Context entries are passed only as keyword parameters **contextkw.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>**contextkw</strong> – context entries, usually empty</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>some value, usually based on bytes read from the stream but sometimes it is computed from nothing or from the context dictionary, sometimes its non-deterministic</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ConstructError</strong> – raised for any reason</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="squishy.scsi.command.SCSICommand6">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">squishy.scsi.command.</span></span><span class="sig-name descname"><span class="pre">SCSICommand6</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">opcode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">subcons</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subconmskw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.scsi.command.SCSICommand6" title="Permalink to this definition"></a></dt>
+<dd><p>Six-byte SCSI Command</p>
+<p>This is a specialization of the <a class="reference internal" href="#squishy.scsi.command.SCSICommand" title="squishy.scsi.command.SCSICommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">SCSICommand</span></code></a> class that deals with
+six-byte SCSI commands. It automatically sets the group code to Group 0.</p>
+<p>The rough layout of the six-byte SCSI commands are the <code class="docutils literal notranslate"><span class="pre">opcode</span></code> followed by
+four <code class="docutils literal notranslate"><span class="pre">data</span></code> bytes, and then the <code class="docutils literal notranslate"><span class="pre">control</span></code> byte.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Byte</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td colspan="8"><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">opcode</span></code></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td colspan="8" rowspan="4"><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">data</span></code></strong></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+<td colspan="8"><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">control</span></code></strong></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>opcode</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – The operation code (opcode) for the given command.</p></li>
+<li><p><strong>*subcons</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>[</em><a class="reference external" href="https://construct.readthedocs.io/en/latest/api/abstract.html#construct.Subconstruct" title="(in Construct v2.10)"><em>construct.Subconstruct</em></a><em>]</em>) – <p>The collection of <a class="reference external" href="https://construct.readthedocs.io/en/latest/index.html">construct</a> <a class="reference external" href="https://construct.readthedocs.io/en/latest/api/abstract.html#construct.Subconstruct" title="(in Construct v2.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Subconstruct</span></code></a>
+members representing the command.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="squishy.scsi.command.SCSICommand10">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">squishy.scsi.command.</span></span><span class="sig-name descname"><span class="pre">SCSICommand10</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">opcode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">subcons</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subconmskw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.scsi.command.SCSICommand10" title="Permalink to this definition"></a></dt>
+<dd><p>Ten-byte SCSI Command</p>
+<p>This is a specialization of the <a class="reference internal" href="#squishy.scsi.command.SCSICommand" title="squishy.scsi.command.SCSICommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">SCSICommand</span></code></a> class that deals with
+ten-byte SCSI commands. It automatically sets the group code to Group 1.</p>
+<p>The rough layout of the ten-byte SCSI commands are the <code class="docutils literal notranslate"><span class="pre">opcode</span></code> followed by
+eight <code class="docutils literal notranslate"><span class="pre">data</span></code> bytes, and then the <code class="docutils literal notranslate"><span class="pre">control</span></code> byte.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Byte</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td colspan="8"><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">opcode</span></code></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td colspan="8" rowspan="8"><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">data</span></code></strong></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">6</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">7</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">9</span></code></p></td>
+<td colspan="8"><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">control</span></code></strong></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>opcode</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – The operation code (opcode) for the given command.</p></li>
+<li><p><strong>*subcons</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>[</em><a class="reference external" href="https://construct.readthedocs.io/en/latest/api/abstract.html#construct.Subconstruct" title="(in Construct v2.10)"><em>construct.Subconstruct</em></a><em>]</em>) – <p>The collection of <a class="reference external" href="https://construct.readthedocs.io/en/latest/index.html">construct</a> <a class="reference external" href="https://construct.readthedocs.io/en/latest/api/abstract.html#construct.Subconstruct" title="(in Construct v2.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Subconstruct</span></code></a>
+members representing the command.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="squishy.scsi.command.SCSICommand12">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">squishy.scsi.command.</span></span><span class="sig-name descname"><span class="pre">SCSICommand12</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">opcode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">subcons</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subconmskw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.scsi.command.SCSICommand12" title="Permalink to this definition"></a></dt>
+<dd><p>Twelve-byte SCSI Command</p>
+<p>This is a specialization of the <a class="reference internal" href="#squishy.scsi.command.SCSICommand" title="squishy.scsi.command.SCSICommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">SCSICommand</span></code></a> class that deals with
+twelve-byte SCSI commands. It automatically sets the group code to Group 5.</p>
+<p>The rough layout of the ten-byte SCSI commands are the <code class="docutils literal notranslate"><span class="pre">opcode</span></code> followed by
+ten <code class="docutils literal notranslate"><span class="pre">data</span></code> bytes, and then the <code class="docutils literal notranslate"><span class="pre">control</span></code> byte.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Byte</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td colspan="8"><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">opcode</span></code></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td colspan="8" rowspan="10"><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">data</span></code></strong></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">6</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">7</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">9</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">A</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">B</span></code></p></td>
+<td colspan="8"><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">control</span></code></strong></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>opcode</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – The operation code (opcode) for the given command.</p></li>
+<li><p><strong>*subcons</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>[</em><a class="reference external" href="https://construct.readthedocs.io/en/latest/api/abstract.html#construct.Subconstruct" title="(in Construct v2.10)"><em>construct.Subconstruct</em></a><em>]</em>) – <p>The collection of <a class="reference external" href="https://construct.readthedocs.io/en/latest/index.html">construct</a> <a class="reference external" href="https://construct.readthedocs.io/en/latest/api/abstract.html#construct.Subconstruct" title="(in Construct v2.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Subconstruct</span></code></a>
+members representing the command.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="squishy.scsi.command.SCSICommandField">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">squishy.scsi.command.</span></span><span class="sig-name descname"><span class="pre">SCSICommandField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><span class="pre">Optional</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><span class="pre">Optional</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.scsi.command.SCSICommandField" title="Permalink to this definition"></a></dt>
+<dd><p>SCSI Command Field</p>
+<p>This is a wrapper <a class="reference external" href="https://construct.readthedocs.io/en/latest/api/abstract.html#construct.Subconstruct" title="(in Construct v2.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Subconstruct</span></code></a> to allow for some metadata and automatic
+type deduction to be preformed based on the field name.</p>
+<p>By default SCSI Command fields don’t have any type prefixing in their name, however
+this class allows for names with a prefix to automatically set the size and type.</p>
+<p>The following table lists the field name prefixes and their type information:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Prefix</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u8l</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int8ul</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u16l</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int16ul</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u24l</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int24ul</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u32l</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int32ul</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u64l</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int64ul</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">s8l</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int8sl</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">s16l</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int16sl</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">s24l</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int24sl</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">s32l</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int32sl</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">s64l</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int64sl</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u8b</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int8ub</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u16b</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int16ub</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u24b</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int24ub</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u32b</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int32ub</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u64b</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int64ub</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">s8b</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int8sb</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">s16b</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int16sb</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">s24b</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int24bl</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">s32b</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int32sb</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">s64b</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Int64sb</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">b#</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.BitsInteger</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>An example prefixed field name would be <code class="docutils literal notranslate"><span class="pre">u8lAllocLen</span></code> which would define an unsigned
+eight-bit unsigned little-endian integer called <code class="docutils literal notranslate"><span class="pre">AllocLen</span></code>.</p>
+<p>However, if the <code class="docutils literal notranslate"><span class="pre">length</span></code> argument is passed, that will override the prefix
+calculated by the name if any is present.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>description</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The description of this field.</p></li>
+<li><p><strong>default</strong> (<em>Any</em>) – The default value for this field if any.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Keyword Arguments</dt>
+<dd class="field-even"><p><strong>length</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – The length of the field in bits.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="squishy.scsi.command.CommandEmitter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">squishy.scsi.command.</span></span><span class="sig-name descname"><span class="pre">CommandEmitter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#squishy.scsi.command.SCSICommand" title="squishy.scsi.command.SCSICommand"><span class="pre">squishy.scsi.command.SCSICommand</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.scsi.command.CommandEmitter" title="Permalink to this definition"></a></dt>
+<dd><p>Creates an emitter based on the specified SCSI command.</p>
+<p>Given a SCSI command like the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Command</span> <span class="o">=</span> <span class="n">SCSICommand6</span><span class="p">(</span><span class="mh">0x00</span><span class="p">,</span>
+        <span class="s1">&#39;Foo&#39;</span> <span class="o">/</span> <span class="n">SCSICommandField</span><span class="p">(</span><span class="n">default</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">8</span><span class="p">),</span>
+        <span class="s1">&#39;Bar&#39;</span> <span class="o">/</span> <span class="n">SCSICommandField</span><span class="p">(</span><span class="n">length</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>You are then able to construct an emitter and use it like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">CommandEmitter</span><span class="p">(</span><span class="n">Command</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">Bar</span> <span class="o">=</span> <span class="mh">0xab</span>
+
+<span class="c1"># b&#39;\x00\xab&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>command</strong> (<a class="reference internal" href="#squishy.scsi.command.SCSICommand" title="squishy.scsi.command.SCSICommand"><em>SCSICommand</em></a>) – The <a class="reference internal" href="#squishy.scsi.command.SCSICommand" title="squishy.scsi.command.SCSICommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">SCSICommand</span></code></a> to wrap.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.scsi.command.CommandEmitter.emit">
+<span class="sig-name descname"><span class="pre">emit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.10)"><span class="pre">bytes</span></a></span></span><a class="headerlink" href="#squishy.scsi.command.CommandEmitter.emit" title="Permalink to this definition"></a></dt>
+<dd><p>Emit bytes</p>
+<p>Takes the assigned fields and generates a byte string from the specified format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The byte string of the serialized command.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.10)">bytes</a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.10)"><strong>KeyError</strong></a> – If missing a required field for the command.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
