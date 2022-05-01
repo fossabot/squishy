@@ -42,7 +42,7 @@
             <a href="../../../index.html" class="icon icon-home"> Squishy
           </a>
               <div class="version">
-                0.1.dev1+g134f442
+                0.1.dev1+gf0894cb
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -226,268 +226,78 @@
 </div>
 <span class="target" id="module-squishy.scsi.commands.common"></span><p>This module contains common commands, that other device classes
 can support.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.common.test_unit_ready">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.</span></span><span class="sig-name descname"><span class="pre">test_unit_ready</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitStruct</span></em><a class="headerlink" href="#squishy.scsi.commands.common.test_unit_ready" title="Permalink to this definition"></a></dt>
-<dd><p>Test Unit Ready - Group: 0 | Peripheral Device: All | Type: Optional</p>
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.test_unit_ready.Test</span> <span class="pre">Unit</span> <span class="pre">Ready.LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="squishy.scsi.commands.common.TestUnitReady">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.</span></span><span class="sig-name descname"><span class="pre">TestUnitReady</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;SCSICommand6</span> <span class="pre">+nonbuild&gt;</span></em><a class="headerlink" href="#squishy.scsi.commands.common.TestUnitReady" title="Permalink to this definition"></a></dt>
+<dd><p>Test Unit Ready</p>
+<p>This command provides the means to check if the logical
+unit is ready.</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.test_unit_ready.Test</span> <span class="pre">Unit</span> <span class="pre">Ready.Reserved</span></span></dt>
-<dd><p>Unsigned 29 bit integer.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="squishy.scsi.commands.common.RequestSense">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.</span></span><span class="sig-name descname"><span class="pre">RequestSense</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;SCSICommand6&gt;</span></em><a class="headerlink" href="#squishy.scsi.commands.common.RequestSense" title="Permalink to this definition"></a></dt>
+<dd><p>Request Sense</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Document this, it’s long ;~;</p>
+</div>
 </dd></dl>
 
+<dl class="py data">
+<dt class="sig sig-object py" id="squishy.scsi.commands.common.Inquiry">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.</span></span><span class="sig-name descname"><span class="pre">Inquiry</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;SCSICommand6&gt;</span></em><a class="headerlink" href="#squishy.scsi.commands.common.Inquiry" title="Permalink to this definition"></a></dt>
+<dd><p>Inquiry</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.common.request_sense">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.</span></span><span class="sig-name descname"><span class="pre">request_sense</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitStruct</span></em><a class="headerlink" href="#squishy.scsi.commands.common.request_sense" title="Permalink to this definition"></a></dt>
-<dd><p>Request Sense - Group: 0 | Peripheral Device: All | Type: Mandatory</p>
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.request_sense.Request</span> <span class="pre">Sense.LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="squishy.scsi.commands.common.Copy">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.</span></span><span class="sig-name descname"><span class="pre">Copy</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;SCSICommand6&gt;</span></em><a class="headerlink" href="#squishy.scsi.commands.common.Copy" title="Permalink to this definition"></a></dt>
+<dd><p>Copy</p>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Document this</p>
+</div>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.request_sense.Request</span> <span class="pre">Sense.Reserved</span></span></dt>
-<dd><p>Unsigned 21 bit integer.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="squishy.scsi.commands.common.ReceiveDiagnosticResults">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.</span></span><span class="sig-name descname"><span class="pre">ReceiveDiagnosticResults</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;SCSICommand6&gt;</span></em><a class="headerlink" href="#squishy.scsi.commands.common.ReceiveDiagnosticResults" title="Permalink to this definition"></a></dt>
+<dd><p>Receive Diagnostic Results</p>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>Document this</p>
+</div>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.request_sense.Request</span> <span class="pre">Sense.AllocLen</span></span></dt>
-<dd><p><strong>Endian:</strong> little</p>
-<p><strong>Size:</strong> 1</p>
-<p><strong>Underlying Types:</strong></p>
-<blockquote>
-<div><p>Type: int</p>
-<p>Size: 1</p>
-<p>Sign: unsigned</p>
-</div></blockquote>
+<dl class="py data">
+<dt class="sig sig-object py" id="squishy.scsi.commands.common.SendDiagnostic">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.</span></span><span class="sig-name descname"><span class="pre">SendDiagnostic</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;SCSICommand6&gt;</span></em><a class="headerlink" href="#squishy.scsi.commands.common.SendDiagnostic" title="Permalink to this definition"></a></dt>
+<dd><p>Send Diagnostic</p>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>Document this</p>
+</div>
 </dd></dl>
 
+<dl class="py data">
+<dt class="sig sig-object py" id="squishy.scsi.commands.common.Compare">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.</span></span><span class="sig-name descname"><span class="pre">Compare</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;SCSICommand10&gt;</span></em><a class="headerlink" href="#squishy.scsi.commands.common.Compare" title="Permalink to this definition"></a></dt>
+<dd><p>Compare</p>
+<div class="admonition-todo admonition" id="id5">
+<p class="admonition-title">Todo</p>
+<p>Document this</p>
+</div>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.common.inquiry">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.</span></span><span class="sig-name descname"><span class="pre">inquiry</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitStruct</span></em><a class="headerlink" href="#squishy.scsi.commands.common.inquiry" title="Permalink to this definition"></a></dt>
-<dd><p>Inquiry - Group: 0 | Peripheral Device: All | Type: Extended</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.common.squishy.scsi.commands.common.inquiry.Inquiry.LUN">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.inquiry.Inquiry.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em><a class="headerlink" href="#squishy.scsi.commands.common.squishy.scsi.commands.common.inquiry.Inquiry.LUN" title="Permalink to this definition"></a></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.common.squishy.scsi.commands.common.inquiry.Inquiry.Reserved">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.inquiry.Inquiry.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em><a class="headerlink" href="#squishy.scsi.commands.common.squishy.scsi.commands.common.inquiry.Inquiry.Reserved" title="Permalink to this definition"></a></dt>
-<dd><p>Unsigned 21 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.common.squishy.scsi.commands.common.inquiry.Inquiry.AllocLen">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.inquiry.Inquiry.</span></span><span class="sig-name descname"><span class="pre">AllocLen</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">FormatField</span></em><a class="headerlink" href="#squishy.scsi.commands.common.squishy.scsi.commands.common.inquiry.Inquiry.AllocLen" title="Permalink to this definition"></a></dt>
-<dd><p><strong>Endian:</strong> little</p>
-<p><strong>Size:</strong> 1</p>
-<p><strong>Underlying Types:</strong></p>
-<blockquote>
-<div><p>Type: int</p>
-<p>Size: 1</p>
-<p>Sign: unsigned</p>
-</div></blockquote>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.common.copy">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.</span></span><span class="sig-name descname"><span class="pre">copy</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitStruct</span></em><a class="headerlink" href="#squishy.scsi.commands.common.copy" title="Permalink to this definition"></a></dt>
-<dd><p>Copy - Group: 0 | Peripheral Device: All | Type: Optional</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.common.squishy.scsi.commands.common.copy.Copy.LUN">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.copy.Copy.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em><a class="headerlink" href="#squishy.scsi.commands.common.squishy.scsi.commands.common.copy.Copy.LUN" title="Permalink to this definition"></a></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.common.squishy.scsi.commands.common.copy.Copy.Reserved">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.copy.Copy.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em><a class="headerlink" href="#squishy.scsi.commands.common.squishy.scsi.commands.common.copy.Copy.Reserved" title="Permalink to this definition"></a></dt>
-<dd><p>Unsigned 5 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.common.squishy.scsi.commands.common.copy.Copy.ParamLen">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.copy.Copy.</span></span><span class="sig-name descname"><span class="pre">ParamLen</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BytesInteger</span></em><a class="headerlink" href="#squishy.scsi.commands.common.squishy.scsi.commands.common.copy.Copy.ParamLen" title="Permalink to this definition"></a></dt>
-<dd><p>Unsigned 3 byte integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.common.receive_diagnostic_results">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.</span></span><span class="sig-name descname"><span class="pre">receive_diagnostic_results</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitStruct</span></em><a class="headerlink" href="#squishy.scsi.commands.common.receive_diagnostic_results" title="Permalink to this definition"></a></dt>
-<dd><p>Receive Diagnostic Results - Group: 0 | Peripheral Device: All | Type: Optional</p>
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.receive_diagnostic_results.Receive</span> <span class="pre">Diagnostic</span> <span class="pre">Results.LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.receive_diagnostic_results.Receive</span> <span class="pre">Diagnostic</span> <span class="pre">Results.Reserved</span></span></dt>
-<dd><p>Unsigned 21 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.receive_diagnostic_results.Receive</span> <span class="pre">Diagnostic</span> <span class="pre">Results.AllocLen</span></span></dt>
-<dd><p><strong>Endian:</strong> little</p>
-<p><strong>Size:</strong> 2</p>
-<p><strong>Underlying Types:</strong></p>
-<blockquote>
-<div><p>Type: int</p>
-<p>Size: 2</p>
-<p>Sign: unsigned</p>
-</div></blockquote>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.common.send_diagnostic">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.</span></span><span class="sig-name descname"><span class="pre">send_diagnostic</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitStruct</span></em><a class="headerlink" href="#squishy.scsi.commands.common.send_diagnostic" title="Permalink to this definition"></a></dt>
-<dd><p>Send Diagnostic - Group: 0 | Peripheral Device: All | Type: Optional</p>
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.send_diagnostic.Send</span> <span class="pre">Diagnostic.LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.send_diagnostic.Send</span> <span class="pre">Diagnostic.Reserved</span></span></dt>
-<dd><p>Unsigned 2 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.send_diagnostic.Send</span> <span class="pre">Diagnostic.SelfTest</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.send_diagnostic.Send</span> <span class="pre">Diagnostic.DevOL</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.send_diagnostic.Send</span> <span class="pre">Diagnostic.UnitOL</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.send_diagnostic.Send</span> <span class="pre">Diagnostic.Reserved</span></span></dt>
-<dd><p><strong>Endian:</strong> little</p>
-<p><strong>Size:</strong> 1</p>
-<p><strong>Underlying Types:</strong></p>
-<blockquote>
-<div><p>Type: int</p>
-<p>Size: 1</p>
-<p>Sign: unsigned</p>
-</div></blockquote>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.send_diagnostic.Send</span> <span class="pre">Diagnostic.ParamLen</span></span></dt>
-<dd><p><strong>Endian:</strong> little</p>
-<p><strong>Size:</strong> 2</p>
-<p><strong>Underlying Types:</strong></p>
-<blockquote>
-<div><p>Type: int</p>
-<p>Size: 2</p>
-<p>Sign: unsigned</p>
-</div></blockquote>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.common.compare">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.</span></span><span class="sig-name descname"><span class="pre">compare</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitStruct</span></em><a class="headerlink" href="#squishy.scsi.commands.common.compare" title="Permalink to this definition"></a></dt>
-<dd><p>Compare - Group: 1 | Peripheral Device: All | Type: Optional</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.common.squishy.scsi.commands.common.compare.Compare.LUN">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.compare.Compare.</span></span><span class="sig-name descname"><span class="pre">LUN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em><a class="headerlink" href="#squishy.scsi.commands.common.squishy.scsi.commands.common.compare.Compare.LUN" title="Permalink to this definition"></a></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.common.squishy.scsi.commands.common.compare.Compare.Reserved">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.compare.Compare.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitsInteger</span></em><a class="headerlink" href="#squishy.scsi.commands.common.squishy.scsi.commands.common.compare.Compare.Reserved" title="Permalink to this definition"></a></dt>
-<dd><p>Unsigned 13 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.common.squishy.scsi.commands.common.compare.Compare.ParamLen">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.compare.Compare.</span></span><span class="sig-name descname"><span class="pre">ParamLen</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BytesInteger</span></em><a class="headerlink" href="#squishy.scsi.commands.common.squishy.scsi.commands.common.compare.Compare.ParamLen" title="Permalink to this definition"></a></dt>
-<dd><p>Unsigned 3 byte integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id0">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.compare.Compare.</span></span><span class="sig-name descname"><span class="pre">Reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BytesInteger</span></em><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
-<dd><p>Unsigned 3 byte integer.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="squishy.scsi.commands.common.copy_and_verify">
-<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.</span></span><span class="sig-name descname"><span class="pre">copy_and_verify</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BitStruct</span></em><a class="headerlink" href="#squishy.scsi.commands.common.copy_and_verify" title="Permalink to this definition"></a></dt>
-<dd><p>Copy and Verify - Group: 1 | Peripheral Device: All | Type: Optional</p>
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.copy_and_verify.Copy</span> <span class="pre">and</span> <span class="pre">Verify.LUN</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.copy_and_verify.Copy</span> <span class="pre">and</span> <span class="pre">Verify.Reserved</span></span></dt>
-<dd><p>Unsigned 3 bit integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.copy_and_verify.Copy</span> <span class="pre">and</span> <span class="pre">Verify.ByteCheck</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.copy_and_verify.Copy</span> <span class="pre">and</span> <span class="pre">Verify.Reserved</span></span></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.copy_and_verify.Copy</span> <span class="pre">and</span> <span class="pre">Verify.ParamLen</span></span></dt>
-<dd><p>Unsigned 3 byte integer.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">squishy.scsi.commands.common.copy_and_verify.Copy</span> <span class="pre">and</span> <span class="pre">Verify.Reserved</span></span></dt>
-<dd><p>Unsigned 3 byte integer.</p>
-</dd></dl>
-
+<dl class="py data">
+<dt class="sig sig-object py" id="squishy.scsi.commands.common.CopyAndVerify">
+<span class="sig-prename descclassname"><span class="pre">squishy.scsi.commands.common.</span></span><span class="sig-name descname"><span class="pre">CopyAndVerify</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;SCSICommand10&gt;</span></em><a class="headerlink" href="#squishy.scsi.commands.common.CopyAndVerify" title="Permalink to this definition"></a></dt>
+<dd><p>Copy and Verify</p>
+<div class="admonition-todo admonition" id="id6">
+<p class="admonition-title">Todo</p>
+<p>Document this</p>
+</div>
 </dd></dl>
 
 </section>
