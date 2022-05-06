@@ -42,7 +42,7 @@
             <a href="../../../index.html" class="icon icon-home"> Squishy
           </a>
               <div class="version">
-                0.1.dev1+gf0894cb
+                0.1.dev1+g380c771
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -737,6 +737,32 @@ extended sense is implemented, it will set the sense key to <code class="docutil
 <code class="docutils literal notranslate"><span class="pre">flag</span></code> or <code class="docutils literal notranslate"><span class="pre">link</span></code> are set.</p></li>
 </ul>
 </div></blockquote>
+<p class="rubric">Examples</p>
+<p>You can define a new <a class="reference internal" href="#squishy.scsi.command.SCSICommand" title="squishy.scsi.command.SCSICommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">SCSICommand</span></code></a> like any other construct structure.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Command</span> <span class="o">=</span> <span class="n">SCSICommand</span><span class="p">(</span>
+        <span class="c1"># Final command opcode is calculated by ``opcode | group_code``</span>
+        <span class="c1"># And then prefixed prior to the given fields</span>
+        <span class="mh">0x01</span><span class="p">,</span>             <span class="c1"># Command Opcode</span>
+        <span class="n">GroupCode</span><span class="o">.</span><span class="n">GROUP0</span><span class="p">,</span> <span class="c1"># Command Group</span>
+        <span class="s1">&#39;Foo&#39;</span> <span class="o">/</span> <span class="n">construct</span><span class="o">.</span><span class="n">Int8ul</span><span class="p">,</span>
+        <span class="s1">&#39;Bar&#39;</span> <span class="o">/</span> <span class="n">construct</span><span class="o">.</span><span class="n">BitStruct</span><span class="p">(</span>
+                <span class="s1">&#39;Nya&#39;</span><span class="p">,</span> <span class="n">construct</span><span class="o">.</span><span class="n">BitsInteger</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+                <span class="s1">&#39;UwU&#39;</span><span class="p">,</span> <span class="n">construct</span><span class="o">.</span><span class="n">BitsInteger</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="c1"># The SCSI &#39;control&#39; byte is then added after.</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also use the special <a class="reference internal" href="#squishy.scsi.command.SCSICommandField" title="squishy.scsi.command.SCSICommandField"><code class="xref py py-class docutils literal notranslate"><span class="pre">SCSICommandField</span></code></a> class to simply attach defaults, descriptions, and automatically
+compute sizes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Command</span> <span class="o">=</span> <span class="n">SCSICommand</span><span class="p">(</span>
+        <span class="mh">0x01</span><span class="p">,</span>
+        <span class="n">GroupCode</span><span class="o">.</span><span class="n">GROUP0</span><span class="p">,</span>
+        <span class="s1">&#39;Foo&#39;</span> <span class="o">/</span> <span class="n">SCSICommandField</span><span class="p">(</span><span class="s1">&#39;This is a field&#39;</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">3</span><span class="p">),</span>
+        <span class="s1">&#39;Bar&#39;</span> <span class="o">/</span> <span class="n">SCSICommandField</span><span class="p">(</span><span class="s1">&#39;This is also a field&#39;</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
