@@ -39,7 +39,7 @@
             <a href="index.html" class="icon icon-home"> Squishy
           </a>
               <div class="version">
-                0.1.dev1+g40acd2d
+                0.1.dev1+g24050d5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -223,6 +223,7 @@
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
  | <a href="#G"><strong>G</strong></a>
  | <a href="#I"><strong>I</strong></a>
  | <a href="#L"><strong>L</strong></a>
@@ -231,7 +232,10 @@
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
  | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
  
 </div>
 <h2 id="A">A</h2>
@@ -251,6 +255,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.BUS_DEV_RESET">BUS_DEV_RESET (squishy.scsi.messages.MessageCodes attribute)</a>
 </li>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.verify.Verify.ByteCheck">ByteCheck (squishy.scsi.commands.direct.squishy.scsi.commands.direct.verify.Verify attribute)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -263,11 +269,17 @@
         <li><a href="library/gateware/platform/rev2.html#squishy.gateware.platform.rev2.SquishyRev2.clock_domain_generator">(squishy.gateware.platform.rev2.SquishyRev2 attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.CMD_COMPLETE">CMD_COMPLETE (squishy.scsi.messages.MessageCodes attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="library/python/commands/index.html#squishy.scsi.command.CommandEmitter">CommandEmitter (class in squishy.scsi.command)</a>
+</li>
+      <li><a href="library/python/commands/common.html#squishy.scsi.commands.common.Compare">Compare (in module squishy.scsi.commands.common)</a>
+</li>
+      <li><a href="library/python/commands/common.html#squishy.scsi.commands.common.Copy">Copy (in module squishy.scsi.commands.common)</a>
+</li>
+      <li><a href="library/python/commands/common.html#squishy.scsi.commands.common.CopyAndVerify">CopyAndVerify (in module squishy.scsi.commands.common)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -297,11 +309,33 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="library/gateware/core/pll.html#squishy.gateware.core.pll.ECP5ClockDomainGenerator">ECP5ClockDomainGenerator (class in squishy.gateware.core.pll)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="library/python/commands/index.html#squishy.scsi.command.CommandEmitter.emit">emit() (squishy.scsi.command.CommandEmitter method)</a>
 </li>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.release.Release.Extent">Extent (squishy.scsi.commands.direct.squishy.scsi.commands.direct.release.Release attribute)</a>
+
+      <ul>
+        <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.reserve.Reserve.Extent">(squishy.scsi.commands.direct.squishy.scsi.commands.direct.reserve.Reserve attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.reserve.Reserve.ExtentListLen">ExtentListLen (squishy.scsi.commands.direct.squishy.scsi.commands.direct.reserve.Reserve attribute)</a>
+</li>
       <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.EXTND_MESSAGE">EXTND_MESSAGE (squishy.scsi.messages.MessageCodes attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/python/commands/printer.html#squishy.scsi.commands.printer.flush_buffer">flush_buffer (in module squishy.scsi.commands.printer)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/python/commands/printer.html#squishy.scsi.commands.printer.format_printer">format_printer (in module squishy.scsi.commands.printer)</a>
+</li>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.format_unit">format_unit (in module squishy.scsi.commands.direct)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -345,10 +379,10 @@
 </li>
       <li><a href="applets/api/applet.html#squishy.applets.SquishyApplet.init_applet">init_applet() (squishy.applets.SquishyApplet method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="applets/api/applet.html#squishy.applets.SquishyApplet.init_gui">init_gui() (squishy.applets.SquishyApplet method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="applets/api/applet.html#squishy.applets.SquishyApplet.init_repl">init_repl() (squishy.applets.SquishyApplet method)</a>
 </li>
       <li><a href="library/gateware/scsi/scsi1.html#squishy.gateware.scsi.scsi1.Initiator">Initiator() (in module squishy.gateware.scsi.scsi1)</a>
@@ -359,6 +393,8 @@
         <li><a href="library/gateware/scsi/scsi3.html#squishy.gateware.scsi.scsi3.Initiator">(in module squishy.gateware.scsi.scsi3)</a>
 </li>
       </ul></li>
+      <li><a href="library/python/commands/common.html#squishy.scsi.commands.common.Inquiry">Inquiry (in module squishy.scsi.commands.common)</a>
+</li>
       <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.INT_DETECT_ERR">INT_DETECT_ERR (squishy.scsi.messages.MessageCodes attribute)</a>
 </li>
   </ul></td>
@@ -367,12 +403,24 @@
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.verify.Verify.LBA">LBA (squishy.scsi.commands.direct.squishy.scsi.commands.direct.verify.Verify attribute)</a>
+</li>
       <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.LINK_CMD_COM">LINK_CMD_COM (squishy.scsi.messages.MessageCodes attribute)</a>
+</li>
+      <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.LINK_CMD_COM_F">LINK_CMD_COM_F (squishy.scsi.messages.MessageCodes attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.LINK_CMD_COM_F">LINK_CMD_COM_F (squishy.scsi.messages.MessageCodes attribute)</a>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.release.Release.LUN">LUN (squishy.scsi.commands.direct.squishy.scsi.commands.direct.release.Release attribute)</a>
+
+      <ul>
+        <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.reserve.Reserve.LUN">(squishy.scsi.commands.direct.squishy.scsi.commands.direct.reserve.Reserve attribute)</a>
 </li>
+        <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.verify.Verify.LUN">(squishy.scsi.commands.direct.squishy.scsi.commands.direct.verify.Verify attribute)</a>
+</li>
+        <li><a href="library/python/commands/printer.html#squishy.scsi.commands.printer.squishy.scsi.commands.printer.print_cmd.Print.LUN">(squishy.scsi.commands.printer.squishy.scsi.commands.printer.print_cmd.Print attribute)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -382,6 +430,10 @@
       <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.MESSAGE_REJECT">MESSAGE_REJECT (squishy.scsi.messages.MessageCodes attribute)</a>
 </li>
       <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes">MessageCodes (class in squishy.scsi.messages)</a>
+</li>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.mode_select">mode_select (in module squishy.scsi.commands.direct)</a>
+</li>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.mode_sense">mode_sense (in module squishy.scsi.commands.direct)</a>
 </li>
       <li>
     module
@@ -421,6 +473,20 @@
 </li>
         <li><a href="library/python/commands/index.html#module-squishy.scsi.command">squishy.scsi.command</a>
 </li>
+        <li><a href="library/python/commands/common.html#module-squishy.scsi.commands.common">squishy.scsi.commands.common</a>
+</li>
+        <li><a href="library/python/commands/direct.html#module-squishy.scsi.commands.direct">squishy.scsi.commands.direct</a>
+</li>
+        <li><a href="library/python/commands/printer.html#module-squishy.scsi.commands.printer">squishy.scsi.commands.printer</a>
+</li>
+        <li><a href="library/python/commands/processor.html#module-squishy.scsi.commands.processor">squishy.scsi.commands.processor</a>
+</li>
+        <li><a href="library/python/commands/ro_direct.html#module-squishy.scsi.commands.ro_direct">squishy.scsi.commands.ro_direct</a>
+</li>
+        <li><a href="library/python/commands/sequential.html#module-squishy.scsi.commands.sequential">squishy.scsi.commands.sequential</a>
+</li>
+        <li><a href="library/python/commands/worm.html#module-squishy.scsi.commands.worm">squishy.scsi.commands.worm</a>
+</li>
         <li><a href="library/python/messages.html#module-squishy.scsi.messages">squishy.scsi.messages</a>
 </li>
       </ul></li>
@@ -445,20 +511,58 @@
       <li><a href="library/python/commands/index.html#squishy.scsi.command.SCSICommand.parse">parse() (squishy.scsi.command.SCSICommand method)</a>
 </li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.prevent_allow_media_removal">prevent_allow_media_removal (in module squishy.scsi.commands.direct)</a>
+</li>
+      <li><a href="library/python/commands/printer.html#squishy.scsi.commands.printer.print_cmd">print_cmd (in module squishy.scsi.commands.printer)</a>
+</li>
+  </ul></td>
 </tr></table>
 
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.read">read (in module squishy.scsi.commands.direct)</a>
+</li>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.read_capacity">read_capacity (in module squishy.scsi.commands.direct)</a>
+</li>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.reassign_blocks">reassign_blocks (in module squishy.scsi.commands.direct)</a>
+</li>
+      <li><a href="library/python/commands/common.html#squishy.scsi.commands.common.ReceiveDiagnosticResults">ReceiveDiagnosticResults (in module squishy.scsi.commands.common)</a>
+</li>
       <li><a href="applets/api/applet.html#squishy.applets.SquishyApplet.register_args">register_args() (squishy.applets.SquishyApplet method)</a>
 </li>
-      <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.RESERVED_END">RESERVED_END (squishy.scsi.messages.MessageCodes attribute)</a>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.verify.Verify.RelativeAddr">RelativeAddr (squishy.scsi.commands.direct.squishy.scsi.commands.direct.verify.Verify attribute)</a>
 </li>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.release">release (in module squishy.scsi.commands.direct)</a>
+</li>
+      <li><a href="library/python/commands/common.html#squishy.scsi.commands.common.RequestSense">RequestSense (in module squishy.scsi.commands.common)</a>
+</li>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.release.Release.ReservationID">ReservationID (squishy.scsi.commands.direct.squishy.scsi.commands.direct.release.Release attribute)</a>
+
+      <ul>
+        <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.reserve.Reserve.ReservationID">(squishy.scsi.commands.direct.squishy.scsi.commands.direct.reserve.Reserve attribute)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.reserve">reserve (in module squishy.scsi.commands.direct)</a>
+</li>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.release.Release.Reserved">Reserved (squishy.scsi.commands.direct.squishy.scsi.commands.direct.release.Release attribute)</a>
+
+      <ul>
+        <li><a href="library/python/commands/direct.html#id0">(squishy.scsi.commands.direct.squishy.scsi.commands.direct.verify.Verify attribute)</a>, <a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.verify.Verify.Reserved">[1]</a>
+</li>
+        <li><a href="library/python/commands/printer.html#squishy.scsi.commands.printer.squishy.scsi.commands.printer.print_cmd.Print.Reserved">(squishy.scsi.commands.printer.squishy.scsi.commands.printer.print_cmd.Print attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.RESERVED_END">RESERVED_END (squishy.scsi.messages.MessageCodes attribute)</a>
+</li>
       <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.RESERVED_START">RESERVED_START (squishy.scsi.messages.MessageCodes attribute)</a>
 </li>
       <li><a href="library/python/messages.html#squishy.scsi.messages.MessageCodes.RESTORE_PTR">RESTORE_PTR (squishy.scsi.messages.MessageCodes attribute)</a>
+</li>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.rezero_unit">rezero_unit (in module squishy.scsi.commands.direct)</a>
 </li>
       <li><a href="applets/api/applet.html#squishy.applets.SquishyApplet.run">run() (squishy.applets.SquishyApplet method)</a>
 </li>
@@ -508,7 +612,17 @@
 </li>
       <li><a href="library/gateware/platform/resources.html#squishy.gateware.platform.resources.scsi.SCSISingleEndedResource">SCSISingleEndedResource() (in module squishy.gateware.platform.resources.scsi)</a>
 </li>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.search_data">search_data (in module squishy.scsi.commands.direct)</a>
+</li>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.seek">seek (in module squishy.scsi.commands.direct)</a>
+</li>
+      <li><a href="library/python/commands/common.html#squishy.scsi.commands.common.SendDiagnostic">SendDiagnostic (in module squishy.scsi.commands.common)</a>
+</li>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.set_limits">set_limits (in module squishy.scsi.commands.direct)</a>
+</li>
       <li><a href="applets/api/applet.html#squishy.applets.SquishyApplet.show_help">show_help() (squishy.applets.SquishyApplet method)</a>
+</li>
+      <li><a href="library/python/commands/printer.html#squishy.scsi.commands.printer.slew_and_print">slew_and_print (in module squishy.scsi.commands.printer)</a>
 </li>
       <li><a href="library/gateware/core/spi.html#squishy.gateware.core.spi.SPIInterface">SPIInterface (class in squishy.gateware.core.spi)</a>
 </li>
@@ -547,8 +661,6 @@
         <li><a href="library/gateware/core/uart.html#module-squishy.gateware.core.uart">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     squishy.gateware.core.usb
 
@@ -570,6 +682,8 @@
         <li><a href="library/gateware/platform/resources.html#module-squishy.gateware.platform.resources.scsi">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     squishy.gateware.platform.rev1
 
@@ -634,6 +748,55 @@
 </li>
       </ul></li>
       <li>
+    squishy.scsi.commands.common
+
+      <ul>
+        <li><a href="library/python/commands/common.html#module-squishy.scsi.commands.common">module</a>
+</li>
+      </ul></li>
+      <li>
+    squishy.scsi.commands.direct
+
+      <ul>
+        <li><a href="library/python/commands/direct.html#module-squishy.scsi.commands.direct">module</a>
+</li>
+      </ul></li>
+      <li>
+    squishy.scsi.commands.printer
+
+      <ul>
+        <li><a href="library/python/commands/printer.html#module-squishy.scsi.commands.printer">module</a>
+</li>
+      </ul></li>
+      <li>
+    squishy.scsi.commands.processor
+
+      <ul>
+        <li><a href="library/python/commands/processor.html#module-squishy.scsi.commands.processor">module</a>
+</li>
+      </ul></li>
+      <li>
+    squishy.scsi.commands.ro_direct
+
+      <ul>
+        <li><a href="library/python/commands/ro_direct.html#module-squishy.scsi.commands.ro_direct">module</a>
+</li>
+      </ul></li>
+      <li>
+    squishy.scsi.commands.sequential
+
+      <ul>
+        <li><a href="library/python/commands/sequential.html#module-squishy.scsi.commands.sequential">module</a>
+</li>
+      </ul></li>
+      <li>
+    squishy.scsi.commands.worm
+
+      <ul>
+        <li><a href="library/python/commands/worm.html#module-squishy.scsi.commands.worm">module</a>
+</li>
+      </ul></li>
+      <li>
     squishy.scsi.messages
 
       <ul>
@@ -652,7 +815,33 @@
 </li>
       <li><a href="library/gateware/platform/rev2.html#squishy.gateware.platform.rev2.SquishyRev2">SquishyRev2 (class in squishy.gateware.platform.rev2)</a>
 </li>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.start_stop_unit">start_stop_unit (in module squishy.scsi.commands.direct)</a>
+</li>
       <li><a href="applets/api/applet.html#squishy.applets.SquishyApplet.supported_platform">supported_platform() (squishy.applets.SquishyApplet method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/python/commands/common.html#squishy.scsi.commands.common.TestUnitReady">TestUnitReady (in module squishy.scsi.commands.common)</a>
+</li>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.release.Release.ThirdParty">ThirdParty (squishy.scsi.commands.direct.squishy.scsi.commands.direct.release.Release attribute)</a>
+
+      <ul>
+        <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.reserve.Reserve.ThirdParty">(squishy.scsi.commands.direct.squishy.scsi.commands.direct.reserve.Reserve attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.release.Release.ThirdPartyDID">ThirdPartyDID (squishy.scsi.commands.direct.squishy.scsi.commands.direct.release.Release attribute)</a>
+
+      <ul>
+        <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.reserve.Reserve.ThirdPartyDID">(squishy.scsi.commands.direct.squishy.scsi.commands.direct.reserve.Reserve attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="library/python/commands/printer.html#squishy.scsi.commands.printer.squishy.scsi.commands.printer.print_cmd.Print.TxLen">TxLen (squishy.scsi.commands.printer.squishy.scsi.commands.printer.print_cmd.Print attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -665,6 +854,30 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="library/gateware/core/usb.html#squishy.gateware.core.usb.USBInterface">USBInterface (class in squishy.gateware.core.usb)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.squishy.scsi.commands.direct.verify.Verify.VerifLen">VerifLen (squishy.scsi.commands.direct.squishy.scsi.commands.direct.verify.Verify attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.verify">verify (in module squishy.scsi.commands.direct)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.write">write (in module squishy.scsi.commands.direct)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="library/python/commands/direct.html#squishy.scsi.commands.direct.write_and_verify">write_and_verify (in module squishy.scsi.commands.direct)</a>
 </li>
   </ul></td>
 </tr></table>
