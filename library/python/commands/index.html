@@ -42,7 +42,7 @@
             <a href="../../../index.html" class="icon icon-home"> Squishy
           </a>
               <div class="version">
-                0.1.dev1+g6206db1
+                0.1.dev1+g6e7b336
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -781,6 +781,18 @@ members representing the command.</p></li>
 </ul>
 </dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The result of the <code class="docutils literal notranslate"><span class="pre">sizeof()</span></code> call returns the size of the SCSI command in bits. To get
+the size in bytes either call the <code class="docutils literal notranslate"><span class="pre">len()</span></code> method or divide the result of the <code class="docutils literal notranslate"><span class="pre">sizeof()</span></code>
+call by <code class="docutils literal notranslate"><span class="pre">8</span></code>.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="squishy.scsi.command.SCSICommand.len">
+<span class="sig-name descname"><span class="pre">len</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#squishy.scsi.command.SCSICommand.len" title="Permalink to this definition"></a></dt>
+<dd><p>Return strcutrue length in bytes</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="squishy.scsi.command.SCSICommand.parse">
 <span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">ctxkw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squishy.scsi.command.SCSICommand.parse" title="Permalink to this definition"></a></dt>
@@ -864,7 +876,19 @@ members representing the command.</p>
 </p></li>
 </ul>
 </dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>group_code</strong> (<a class="reference internal" href="#squishy.scsi.command.GroupCode" title="squishy.scsi.command.GroupCode"><em>GroupCode</em></a>) – The SCSI commands group code.</p></li>
+<li><p><strong>size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – The total size of the SCSI command.</p></li>
+</ul>
+</dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The result of the <code class="docutils literal notranslate"><span class="pre">sizeof()</span></code> call returns the size of the SCSI command in bits. To get
+the size in bytes either call the <code class="docutils literal notranslate"><span class="pre">len()</span></code> method or divide the result of the <code class="docutils literal notranslate"><span class="pre">sizeof()</span></code>
+call by <code class="docutils literal notranslate"><span class="pre">8</span></code>.</p>
+</div>
 </dd></dl>
 
 <dl class="py class">
@@ -937,7 +961,19 @@ members representing the command.</p>
 </p></li>
 </ul>
 </dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>group_code</strong> (<a class="reference internal" href="#squishy.scsi.command.GroupCode" title="squishy.scsi.command.GroupCode"><em>GroupCode</em></a>) – The SCSI commands group code.</p></li>
+<li><p><strong>size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – The total size of the SCSI command.</p></li>
+</ul>
+</dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The result of the <code class="docutils literal notranslate"><span class="pre">sizeof()</span></code> call returns the size of the SCSI command in bits. To get
+the size in bytes either call the <code class="docutils literal notranslate"><span class="pre">len()</span></code> method or divide the result of the <code class="docutils literal notranslate"><span class="pre">sizeof()</span></code>
+call by <code class="docutils literal notranslate"><span class="pre">8</span></code>.</p>
+</div>
 </dd></dl>
 
 <dl class="py class">
@@ -1014,7 +1050,19 @@ members representing the command.</p>
 </p></li>
 </ul>
 </dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>group_code</strong> (<a class="reference internal" href="#squishy.scsi.command.GroupCode" title="squishy.scsi.command.GroupCode"><em>GroupCode</em></a>) – The SCSI commands group code.</p></li>
+<li><p><strong>size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – The total size of the SCSI command.</p></li>
+</ul>
+</dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The result of the <code class="docutils literal notranslate"><span class="pre">sizeof()</span></code> call returns the size of the SCSI command in bits. To get
+the size in bytes either call the <code class="docutils literal notranslate"><span class="pre">len()</span></code> method or divide the result of the <code class="docutils literal notranslate"><span class="pre">sizeof()</span></code>
+call by <code class="docutils literal notranslate"><span class="pre">8</span></code>.</p>
+</div>
 </dd></dl>
 
 <dl class="py class">
@@ -1156,6 +1204,11 @@ calculated by the name if any is present.</p>
 <span class="sig-name descname"><span class="pre">emit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.10)"><span class="pre">bytes</span></a></span></span><a class="headerlink" href="#squishy.scsi.command.CommandEmitter.emit" title="Permalink to this definition"></a></dt>
 <dd><p>Emit bytes</p>
 <p>Takes the assigned fields and generates a byte string from the specified format.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method wraps the internal <a class="reference external" href="https://construct.readthedocs.io/en/latest/api/abstract.html#construct.Subconstruct" title="(in Construct v2.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">construct.Subconstruct</span></code></a> in a <a class="reference external" href="https://construct.readthedocs.io/en/latest/api/bytes.html#construct.Bitwise" title="(in Construct v2.10)"><code class="xref py py-func docutils literal notranslate"><span class="pre">construct.Bitwise()</span></code></a>
+to serialize the structure to bytes.</p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The byte string of the serialized command.</p>
