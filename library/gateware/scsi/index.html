@@ -42,7 +42,7 @@
             <a href="../../../index.html" class="icon icon-home"> Squishy
           </a>
               <div class="version">
-                0.1.dev1+g435bda9
+                0.1.dev1+gc49bf45
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -146,6 +146,7 @@
 <li class="toctree-l4"><a class="reference internal" href="scsi1.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi.scsi1</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="scsi2.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi.scsi2</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="scsi3.html"><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi.scsi3</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anatomy-of-a-scsi-bus">Anatomy of a SCSI Bus</a></li>
 </ul>
 </li>
 </ul>
@@ -224,8 +225,234 @@
 <h1><code class="docutils literal notranslate"><span class="pre">squishy.gateware.scsi</span></code><a class="headerlink" href="#squishy-gateware-scsi" title="Permalink to this headline"></a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<p>The following module contains all the elaboratables for interacting with SCSI via
-the Squishy based PHY or to implement another SCSI based solution for SCSI-1, SCSI-2, and SCSI-3.</p>
+<span class="target" id="module-squishy.gateware.scsi"></span><section id="anatomy-of-a-scsi-bus">
+<h2>Anatomy of a SCSI Bus<a class="headerlink" href="#anatomy-of-a-scsi-bus" title="Permalink to this headline"></a></h2>
+<p>SCSI Is a bus based system, all devices on the bus have a unique ID and are split into two categories,
+Initiator, and Target. In general Initiators are show as an adapter connected to a host, and Targets are
+shown as controllers attatches to a target device. This abstraction serves to represent that there can be
+multiple possible targets behind a single controller, which share a single bus connection.</p>
+<p>As SCSI is not a purely point-to-point bus, and allows for multiple bus initiators, there are three possible
+bus topologies. The first is Single Initiator, Single Target. This topology acts as a point-to-point bus between
+a SCSI Initiator and SCSI Target. The second being Single Initiator, Multiple Target. This topology is the
+traditional topology along with Single Initiator that people think of when they think of SCSI. The final possible
+common bus topology is Multiple Initiator, Multiple Target. This is where there are multiple initiators and multiple
+targets all on the shared bus.</p>
+<figure class="align-center" id="id1">
+<div class="graphviz"><object data="../../../_images/graphviz-ac630a4657d08f9b293c29bc38468959ad7dde2a.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">graph scsi_bus_sist {
+        fontname=&quot;Fira Code&quot;
+        node [fontname=&quot;Fira Code&quot;]
+        edge [fontname=&quot;Fire Code&quot;]
+        rankdir=LR;
+
+        node [shape = Mrecord];
+
+        H0 [label = &quot;{&lt;f0&gt;HOST|&lt;f1&gt;ADAPTER}&quot;];
+        T0 [label = &quot;{&lt;f0&gt;CONTROLLER|&lt;f1&gt;TARGET}&quot;];
+
+        H0:f1 -- T0:f0
+}</p></object></div>
+<figcaption>
+<p><span class="caption-text">Single Initiator, Single Target Bus Topology</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
+<div class="graphviz"><object data="../../../_images/graphviz-ac4717d030a3ed8a8d41839019a458b7bc932653.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">graph scsi_bus_simt {
+        fontname=&quot;Fira Code&quot;
+        node [fontname=&quot;Fira Code&quot;]
+        edge [fontname=&quot;Fire Code&quot;]
+        rankdir=LR;
+
+        node [shape = Mrecord];
+
+        H0 [label = &quot;{&lt;f0&gt;HOST|&lt;f1&gt;ADAPTER}&quot;];
+        T0 [label = &quot;{&lt;f0&gt;CONTROLLER|&lt;f1&gt;TARGET}&quot;];
+        T1 [label = &quot;{&lt;f0&gt;CONTROLLER|&lt;f1&gt;TARGET}&quot;];
+
+        H0:f1 -- T0:f0
+        H0:f1 -- T1:f0
+}</p></object></div>
+<figcaption>
+<p><span class="caption-text">Single Initiator, Multiple Target Bus Topology</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3">
+<div class="graphviz"><object data="../../../_images/graphviz-46ba108d995e14fa99e392c171267dae56313227.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">graph scsi_bus_mimt {
+        fontname=&quot;Fira Code&quot;
+        node [fontname=&quot;Fira Code&quot;]
+        edge [fontname=&quot;Fire Code&quot;]
+        rankdir=LR;
+
+        node [shape = Mrecord];
+
+        H0 [label = &quot;{&lt;f0&gt;HOST|&lt;f1&gt;ADAPTER}&quot;];
+        H1 [label = &quot;{&lt;f0&gt;HOST|&lt;f1&gt;ADAPTER}&quot;];
+        H2 [label = &quot;{&lt;f0&gt;HOST|&lt;f1&gt;ADAPTER}&quot;];
+
+        T0 [label = &quot;{&lt;f0&gt;CONTROLLER|&lt;f1&gt;TARGET}&quot;];
+        T1 [label = &quot;{&lt;f0&gt;CONTROLLER|&lt;f1&gt;TARGET}&quot;];
+        T2 [label = &quot;{&lt;f0&gt;CONTROLLER|&lt;f1&gt;TARGET}&quot;];
+        T3 [label = &quot;{&lt;f0&gt;CONTROLLER|&lt;f1&gt;TARGET}&quot;];
+
+        H0:f1 -- T0:f0
+        H0:f1 -- T1:f0
+        H0:f1 -- T2:f0
+        H0:f1 -- T3:f0
+
+        H1:f1 -- T0:f0
+        H1:f1 -- T1:f0
+        H1:f1 -- T2:f0
+        H1:f1 -- T3:f0
+
+        H2:f1 -- T0:f0
+        H2:f1 -- T1:f0
+        H2:f1 -- T2:f0
+        H2:f1 -- T3:f0
+}</p></object></div>
+<figcaption>
+<p><span class="caption-text">Multiple Initiator, Multiple Target Bus Topology</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>this, nya</p>
+</div>
+<figure class="align-center" id="id4">
+<div class="graphviz"><object data="../../../_images/graphviz-8618df2e66db4cf7112abf42929b1c4eac35f329.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph scsi_with_arbitrartion {
+        fontname=&quot;Fira Code&quot;
+        bgcolor=&quot;#FFFFFF00&quot;
+        node [fontname=&quot;Fira Code&quot;]
+        edge [fontname=&quot;Fire Code&quot;]
+        rankdir=LR;
+        node [shape = none]; _
+        node [shape = doublecircle]; BF
+        node [shape = circle];
+
+
+        _ [label = &quot;RESET&quot;];
+        BF [label = &quot;BUS FREE&quot;];
+        A [label = &quot;ARBITRATION&quot;];
+        S [label = &quot;SELECTION&quot;];
+        R [label = &quot;RESELECTION&quot;];
+        C [label = &quot;COMMAND&quot;];
+        D [label = &quot;DATA&quot;];
+        ST [label = &quot;STATUS&quot;];
+        M [label = &quot;MESSAGE&quot;];
+
+        subgraph CDSM {
+                C -&gt; C
+                C -&gt; D
+                C -&gt; ST
+                C -&gt; M
+
+                D -&gt; D
+                D -&gt; C
+                D -&gt; ST
+                D -&gt; M
+
+                ST -&gt; ST
+                ST -&gt; C
+                ST -&gt; D
+                ST -&gt; M
+
+                M -&gt; M
+                M -&gt; C
+                M -&gt; D
+                M -&gt; ST
+        }
+
+        S -&gt; C [label = &quot;&quot;];
+        S -&gt; D [label = &quot;&quot;];
+        S -&gt; ST [label = &quot;&quot;];
+        S -&gt; M [label = &quot;&quot;];
+
+        R -&gt; C [label = &quot;&quot;];
+        R -&gt; D [label = &quot;&quot;];
+        R -&gt; ST [label = &quot;&quot;];
+        R -&gt; M [label = &quot;&quot;];
+
+        _ -&gt; BF [label = &quot;&quot;];
+        BF -&gt; A [label = &quot;&quot;];
+        A -&gt; S [label = &quot;&quot;];
+        A -&gt; R [label = &quot;&quot;];
+        A -&gt; BF [label = &quot;&quot;];
+        S -&gt; BF [label = &quot;&quot;];
+        R -&gt; BF [label = &quot;&quot;];
+
+        C -&gt; BF [label = &quot;&quot;];
+        D -&gt; BF [label = &quot;&quot;];
+        ST -&gt; BF [label = &quot;&quot;];
+        M -&gt; BF [label = &quot;&quot;];
+}</p></object></div>
+<figcaption>
+<p><span class="caption-text">Arbitrating SCSI Bus State Machine</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id5">
+<div class="graphviz"><object data="../../../_images/graphviz-f0797de2a8fe33c6769f77e964bf7840b3e25b6f.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph scsi_with_arbitrartion {
+        fontname=&quot;Fira Code&quot;
+        bgcolor=&quot;#FFFFFF00&quot;
+        node [fontname=&quot;Fira Code&quot;]
+        edge [fontname=&quot;Fire Code&quot;]
+        rankdir=LR;
+        node [shape = none]; _
+        node [shape = doublecircle]; BF
+        node [shape = circle];
+
+
+        _ [label = &quot;RESET&quot;];
+        BF [label = &quot;BUS FREE&quot;];
+        S [label = &quot;SELECTION&quot;];
+        C [label = &quot;COMMAND&quot;];
+        D [label = &quot;DATA&quot;];
+        ST [label = &quot;STATUS&quot;];
+        M [label = &quot;MESSAGE&quot;];
+
+        subgraph CDSM {
+                C -&gt; C
+                C -&gt; D
+                C -&gt; ST
+                C -&gt; M
+
+                D -&gt; D
+                D -&gt; C
+                D -&gt; ST
+                D -&gt; M
+
+                ST -&gt; ST
+                ST -&gt; C
+                ST -&gt; D
+                ST -&gt; M
+
+                M -&gt; M
+                M -&gt; C
+                M -&gt; D
+                M -&gt; ST
+        }
+
+        S -&gt; C [label = &quot;&quot;];
+        S -&gt; D [label = &quot;&quot;];
+        S -&gt; ST [label = &quot;&quot;];
+        S -&gt; M [label = &quot;&quot;];
+
+        _ -&gt; BF [label = &quot;&quot;];
+        BF -&gt; S [label = &quot;&quot;];
+        S -&gt; BF [label = &quot;&quot;];
+
+        C -&gt; BF [label = &quot;&quot;];
+        D -&gt; BF [label = &quot;&quot;];
+        ST -&gt; BF [label = &quot;&quot;];
+        M -&gt; BF [label = &quot;&quot;];
+}</p></object></div>
+<figcaption>
+<p><span class="caption-text">Non-Arbitrating SCSI Bus State Machine</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 
     <script type="text/javascript">
